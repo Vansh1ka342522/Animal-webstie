@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="View Luna's profile and sponsor an experience for her. HELP Luna find comfort and joy while she waits for her forever home.">
+    <title>Luna's Profile | PawsForward</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Three.js Canvas Background -->
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🐾</div>
+                <span>PawsForward</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="daycare.html">Spa Day</a></li>
+                <li><a href="dayout.html">Adventures</a></li>
+                <li><a href="packages.html">Care Packages</a></li>
+                <li><a href="dogs.html">Meet the Dogs</a></li>
+                <li><a href="impact.html">Our Impact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Dog Profile Hero -->
+        <section class="page-header" style="padding-bottom: var(--space-8);">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: var(--space-12);">
+                    <div class="fade-in">
+                        <img src="images/dog-1.jpg" alt="Luna"
+                            style="width: 100%; height: 500px; object-fit: cover; border-radius: var(--radius-2xl); box-shadow: var(--shadow-xl);">
+                    </div>
+                    <div class="fade-in">
+                        <div class="hero-badge">
+                            <span>💖</span>
+                            <span>Available for Sponsorship</span>
+                        </div>
+                        <h1 style="font-size: var(--text-5xl); margin-bottom: var(--space-2);">Meet Luna</h1>
+                        <p class="dog-meta" style="font-size: var(--text-lg); margin-bottom: var(--space-6);">2 years
+                            old • Mixed Breed • Female • Shelter Haven</p>
+
+                        <div class="dog-traits" style="margin-bottom: var(--space-8);">
+                            <span class="trait-tag"
+                                style="font-size: var(--text-base); padding: var(--space-2) var(--space-4);">Very
+                                Playful</span>
+                            <span class="trait-tag"
+                                style="font-size: var(--text-base); padding: var(--space-2) var(--space-4);">Loves Long
+                                Walks</span>
+                            <span class="trait-tag"
+                                style="font-size: var(--text-base); padding: var(--space-2) var(--space-4);">Cuddle
+                                Bug</span>
+                            <span class="trait-tag"
+                                style="font-size: var(--text-base); padding: var(--space-2) var(--space-4);">Good with
+                                Kids</span>
+                        </div>
+
+                        <p style="font-size: var(--text-lg); margin-bottom: var(--space-8);">Luna is a bundle of joy who
+                            was rescued from a high-intake shelter. She is incredibly resilient and has a spirit that
+                            lights up the room. She loves to explore and has a heart of gold.</p>
+
+                        <div class="hero-buttons">
+                            <a href="#sponsor-options" class="btn btn-primary btn-lg">Sponsor an Experience</a>
+                            <a href="#" class="btn btn-glass btn-lg">Adopt Luna</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personality & Preferences -->
+        <section class="section" style="padding-top: var(--space-8);">
+            <div class="container">
+                <div class="grid grid-2" style="gap: var(--space-12);">
+                    <div class="card fade-in">
+                        <h3>Likes</h3>
+                        <ul style="list-style: none; margin-top: var(--space-4);">
+                            <li
+                                style="margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-3);">
+                                <span style="font-size: 1.5rem;">🎾</span> Squeaky tennis balls
+                            </li>
+                            <li
+                                style="margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-3);">
+                                <span style="font-size: 1.5rem;">🌳</span> Exploring new parks
+                            </li>
+                            <li
+                                style="margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-3);">
+                                <span style="font-size: 1.5rem;">🥓</span> Bacon-flavored treats
+                            </li>
+                            <li
+                                style="margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-3);">
+                                <span style="font-size: 1.5rem;">🛋️</span> Afternoon naps in the sun
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card fade-in">
+                        <h3>Dislikes</h3>
+                        <ul style="list-style: none; margin-top: var(--space-4);">
+                            <li
+                                style="margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-3);">
+                                <span style="font-size: 1.5rem;">🌩️</span> Loud thunderstorms
+                            </li>
+                            <li
+                                style="margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-3);">
+                                <span style="font-size: 1.5rem;">🚿</span> Very cold water
+                            </li>
+                            <li
+                                style="margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-3);">
+                                <span style="font-size: 1.5rem;">🍋</span> Citrus smells
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsorship Options -->
+        <section id="sponsor-options" class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Sponsor an Experience for Luna</h2>
+                    <p>Choose how you'd like to make Luna's day special. 100% of your gift goes directly to her care and
+                        experience.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <!-- Option 1 -->
+                    <div class="card service-card fade-in">
+                        <div class="icon">🛁</div>
+                        <h3>Spa Day</h3>
+                        <p>A relaxing afternoon of gentle grooming, a warm bath, and calming massage.</p>
+                        <div class="pricing-amount" style="margin-bottom: var(--space-4);">$50</div>
+                        <a href="#" class="btn btn-primary" style="width: 100%;">Gift a Spa Day</a>
+                    </div>
+
+                    <!-- Option 2 -->
+                    <div class="card service-card fade-in">
+                        <div class="icon">🌲</div>
+                        <h3>Day Out</h3>
+                        <p>A scenic hike or a trip to her favorite local park for some serious sniffing.</p>
+                        <div class="pricing-amount" style="margin-bottom: var(--space-4);">$65</div>
+                        <a href="#" class="btn btn-primary" style="width: 100%;">Fund an Adventure</a>
+                    </div>
+
+                    <!-- Option 3 -->
+                    <div class="card service-card fade-in">
+                        <div class="icon">🎁</div>
+                        <h3>Care Package</h3>
+                        <p>Her favorite bacon treats and a brand new squeaky tennis ball delivered to her kennel.</p>
+                        <div class="pricing-amount" style="margin-bottom: var(--space-4);">$25</div>
+                        <a href="#" class="btn btn-primary" style="width: 100%;">Send a Package</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Updates -->
+        <section class="section" style="background: rgba(255, 255, 255, 0.3);">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Updates from Luna</h2>
+                    <p>See the impact past sponsors have had on Luna's journey.</p>
+                </div>
+
+                <div class="grid grid-2">
+                    <div class="card fade-in">
+                        <div
+                            style="display: flex; gap: var(--space-4); align-items: center; margin-bottom: var(--space-4);">
+                            <div
+                                style="width: 60px; height: 60px; border-radius: 50%; background: var(--gradient-start); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                🛁</div>
+                            <div>
+                                <h4 style="margin: 0;">Spa Day Success!</h4>
+                                <small style="color: var(--text-light);">December 28, 2025</small>
+                            </div>
+                        </div>
+                        <p>"Luna was a bit nervous at first, but the warm towel wrap worked wonders. She smelled like
+                            lavender and spent the afternoon napping peacefully. Thank you to her sponsor, Sarah!"</p>
+                        <img src="images/dog-1.jpg" alt="Luna after spa"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-top: var(--space-4);">
+                    </div>
+
+                    <div class="card fade-in">
+                        <div
+                            style="display: flex; gap: var(--space-4); align-items: center; margin-bottom: var(--space-4);">
+                            <div
+                                style="width: 60px; height: 60px; border-radius: 50%; background: var(--gradient-mid); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                🌲</div>
+                            <div>
+                                <h4 style="margin: 0;">Adventure in the Park</h4>
+                                <small style="color: var(--text-light);">December 15, 2025</small>
+                            </div>
+                        </div>
+                        <p>"Luna went on a 2-mile hike today! She loved chasing the leaves and even got a pup-cup on the
+                            way home. She's so happy and tired out! Thanks to the donor, James."</p>
+                        <img src="images/hero-dog.jpg" alt="Luna in park"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-top: var(--space-4);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">🐾</div>
+                        <span>PawsForward</span>
+                    </div>
+                    <p>Bringing joy, comfort, and hope to shelter dogs through sponsored experiences and care.</p>
+                </div>
+
+                <div>
+                    <h4>Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="daycare.html">Doggy Spa Day</a></li>
+                        <li><a href="dayout.html">Doggy Day Out</a></li>
+                        <li><a href="packages.html">Care Packages</a></li>
+                        <li><a href="donate.html">Monthly Giving</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="dogs.html">Meet the Dogs</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="#">Partner Shelters</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Social</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 PawsForward. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Support shelter dogs with a one-time or monthly donation. HELP distribute funds to shelters in need.">
+    <title>Donate | PawsForward</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Three.js Canvas Background -->
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🐾</div>
+                <span>PawsForward</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="daycare.html">Spa Day</a></li>
+                <li><a href="dayout.html">Adventures</a></li>
+                <li><a href="packages.html">Care Packages</a></li>
+                <li><a href="dogs.html">Meet the Dogs</a></li>
+                <li><a href="impact.html">Our Impact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Donation Hero -->
+        <section class="page-header">
+            <div class="container">
+                <div class="hero-badge fade-in">
+                    <span>💝</span>
+                    <span>Make a Tangible Difference</span>
+                </div>
+                <h1 class="fade-in">Support Shelter Dogs</h1>
+                <p class="fade-in">Whether it's a one-time gift or a monthly commitment, your donation provides the
+                    extra care and joy that makes shelter life bearable and helps dogs find their way home.</p>
+            </div>
+        </section>
+
+        <!-- Donation Form Section -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="grid grid-2" style="gap: var(--space-12); align-items: start;">
+
+                    <!-- Donation Form -->
+                    <div class="card fade-in" style="padding: var(--space-8);">
+                        <h3>Choose Your Donation</h3>
+
+                        <div style="display: flex; gap: var(--space-4); margin: var(--space-6) 0;">
+                            <button class="filter-btn active" style="flex: 1; padding: var(--space-4);">Monthly</button>
+                            <button class="filter-btn" style="flex: 1; padding: var(--space-4);">One-Time</button>
+                        </div>
+
+                        <div class="donation-grid" style="margin-bottom: var(--space-8);">
+                            <div class="card donation-card" onclick="selectDonation(this, 15)">
+                                <div class="pricing-amount" style="font-size: var(--text-3xl);">$15</div>
+                                <p style="font-size: var(--text-sm); margin: 0;">Care Package</p>
+                            </div>
+                            <div class="card donation-card selected" onclick="selectDonation(this, 35)">
+                                <div class="pricing-amount" style="font-size: var(--text-3xl);">$35</div>
+                                <p style="font-size: var(--text-sm); margin: 0;">Adventure Outing</p>
+                            </div>
+                            <div class="card donation-card" onclick="selectDonation(this, 50)">
+                                <div class="pricing-amount" style="font-size: var(--text-3xl);">$50</div>
+                                <p style="font-size: var(--text-sm); margin: 0;">Full Spa Day</p>
+                            </div>
+                            <div class="card donation-card"
+                                style="display: flex; align-items: center; justify-content: center;">
+                                <input type="number" placeholder="Other"
+                                    style="width: 100%; border: none; background: transparent; text-align: center; font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 700; color: var(--primary);">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-input" placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" placeholder="john@example.com">
+                        </div>
+
+                        <div style="margin: var(--space-8) 0;">
+                            <p
+                                style="font-size: var(--text-sm); color: var(--text-light); margin-bottom: var(--space-4);">
+                                🔒 Secure payment processing via Stripe</p>
+                            <button class="btn btn-primary btn-lg" style="width: 100%;">Complete My Donation</button>
+                        </div>
+
+                        <p style="text-align: center; font-size: var(--text-sm);">100% of your donation is
+                            tax-deductible.</p>
+                    </div>
+
+                    <!-- Impact Summary -->
+                    <div class="fade-in">
+                        <h2>Where Your Money Goes</h2>
+                        <p style="font-size: var(--text-lg); margin-bottom: var(--space-8);">We pride ourselves on
+                            transparency. Here's how your monthly donation is distributed to our partner shelters most
+                            in need.</p>
+
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="icon">🏘️</div>
+                                <div>
+                                    <h4>80% Directly to Dogs</h4>
+                                    <p>Funding the spa days, outdoor adventures, and care packages you see on this site.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="icon">🏥</div>
+                                <div>
+                                    <h4>15% Emergency Care</h4>
+                                    <p>A reserve fund for unexpected medical needs for the dogs in our program.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="icon">⚙️</div>
+                                <div>
+                                    <h4>5% Operations</h4>
+                                    <p>Keeping the platform running and facilitating communication between donors and
+                                        shelters.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card card-glass" style="margin-top: var(--space-8);">
+                            <h4>Monthly Donor Perks</h4>
+                            <ul style="list-style: none; margin-top: var(--space-4);">
+                                <li style="margin-bottom: var(--space-2);">✨ Monthly "Paws-itive Impact" digital
+                                    newsletter</li>
+                                <li style="margin-bottom: var(--space-2);">✨ First look at new dogs entering the program
+                                </li>
+                                <li style="margin-bottom: var(--space-2);">✨ Personalized year-end impact report</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison -->
+        <section class="section" style="background: rgba(255, 255, 255, 0.3);">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Transparency & Trust</h2>
+                    <p>We work with vetted shelter partners to ensure every dollar makes a real impact.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card fade-in" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">✅</div>
+                        <h4>Vetted Shelters</h4>
+                        <p>Every partner shelter undergoes a rigorous audit of their care standards.</p>
+                    </div>
+                    <div class="card fade-in" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">📊</div>
+                        <h4>Impact Tracking</h4>
+                        <p>We track the adoption success rate of dogs who receive our sponsored experiences.</p>
+                    </div>
+                    <div class="card fade-in" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🏠</div>
+                        <h4>Local Impact</h4>
+                        <p>Your funds stay within your state, helping local shelters in your region.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 PawsForward. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+
+    <script>
+        function selectDonation(element, amount) {
+            document.querySelectorAll('.donation-card').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+    </script>
+</body>
+
+</html>

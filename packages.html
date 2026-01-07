@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Send toys and treats to shelter dogs - enrichment items that provide mental stimulation, comfort, and joy.">
+    <title>Care Packages | PawsForward</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🐾</div>
+                <span>PawsForward</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="daycare.html">Spa Day</a></li>
+                <li><a href="dayout.html">Adventures</a></li>
+                <li><a href="packages.html">Care Packages</a></li>
+                <li><a href="dogs.html">Meet the Dogs</a></li>
+                <li><a href="impact.html">Our Impact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="hero-badge fade-in">
+                    <span>🎁</span>
+                    <span>Toys & Treats</span>
+                </div>
+                <h1 class="fade-in">Care Packages</h1>
+                <p class="fade-in">Send joy directly to a shelter dog's kennel—toys for enrichment, treats for
+                    happiness, and comfort items for peace.</p>
+            </div>
+        </section>
+
+        <!-- Why Care Packages -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: var(--space-16);">
+                    <div class="fade-in">
+                        <img src="images/package-dog.jpg" alt="Dog with toys"
+                            style="width: 100%; border-radius: var(--radius-2xl); box-shadow: var(--shadow-xl);"
+                            id="package-dog-img">
+                    </div>
+                    <div class="fade-in">
+                        <h2>More Than Just Toys</h2>
+                        <p style="font-size: var(--text-lg); margin-bottom: var(--space-8);">Shelter life can be
+                            monotonous and stressful. Care packages break the routine with items that stimulate minds,
+                            soothe anxieties, and bring genuine happiness.</p>
+
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="icon">🧩</div>
+                                <div>
+                                    <h4>Mental Enrichment</h4>
+                                    <p>Puzzle toys keep minds active and reduce boredom.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="icon">😌</div>
+                                <div>
+                                    <h4>Stress Relief</h4>
+                                    <p>Chew toys and comfort items help manage anxiety.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="icon">🎉</div>
+                                <div>
+                                    <h4>Pure Joy</h4>
+                                    <p>The simple happiness of treats and playtime.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Toy Categories -->
+        <section class="section" style="background: rgba(255,255,255,0.3);">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Toy Categories</h2>
+                    <p>Choose toys that match your dog's personality and needs.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🧠</div>
+                        <h3>Puzzle Toys</h3>
+                        <p>Interactive toys that challenge and reward, perfect for smart pups who need mental
+                            stimulation.</p>
+                        <span class="trait-tag" style="margin-top: var(--space-3); display: inline-block;">From
+                            $15</span>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🦴</div>
+                        <h3>Durable Chews</h3>
+                        <p>Tough toys for power chewers that last longer and help reduce stress.</p>
+                        <span class="trait-tag" style="margin-top: var(--space-3); display: inline-block;">From
+                            $12</span>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">⚾</div>
+                        <h3>Balls & Fetch</h3>
+                        <p>Classic fetch toys for active dogs who love to run and play.</p>
+                        <span class="trait-tag" style="margin-top: var(--space-3); display: inline-block;">From
+                            $8</span>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🪢</div>
+                        <h3>Rope & Tug</h3>
+                        <p>Interactive play toys for bonding and physical exercise.</p>
+                        <span class="trait-tag" style="margin-top: var(--space-3); display: inline-block;">From
+                            $10</span>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🧸</div>
+                        <h3>Comfort Toys</h3>
+                        <p>Soft plush companions for cuddlers and anxious pups who need comfort.</p>
+                        <span class="trait-tag" style="margin-top: var(--space-3); display: inline-block;">From
+                            $10</span>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🔊</div>
+                        <h3>Squeaky Toys</h3>
+                        <p>Fun sensory toys that engage and entertain playful personalities.</p>
+                        <span class="trait-tag" style="margin-top: var(--space-3); display: inline-block;">From
+                            $8</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treat Categories -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Treat Categories</h2>
+                    <p>Delicious rewards that make tails wag.</p>
+                </div>
+
+                <div class="grid grid-4">
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🎓</div>
+                        <h4>Training Treats</h4>
+                        <p style="font-size: var(--text-sm);">Small, tasty bites perfect for learning and positive
+                            reinforcement.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🦷</div>
+                        <h4>Dental Chews</h4>
+                        <p style="font-size: var(--text-sm);">Treats that clean teeth while providing long-lasting
+                            enjoyment.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🌾</div>
+                        <h4>Sensitive Stomach</h4>
+                        <p style="font-size: var(--text-sm);">Gentle, grain-free options for dogs with dietary needs.
+                        </p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🥩</div>
+                        <h4>Natural Treats</h4>
+                        <p style="font-size: var(--text-sm);">Freeze-dried meats and single-ingredient healthy snacks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Package Options -->
+        <section class="section" style="background: rgba(255,255,255,0.3);">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Pre-Made Packages</h2>
+                    <p>Can't decide? Choose a curated care package.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="pricing-card card fade-in">
+                        <h3>Starter Box</h3>
+                        <div class="pricing-amount">$25</div>
+                        <div class="pricing-period">per dog</div>
+                        <ul style="list-style: none; margin: var(--space-6) 0; text-align: left;">
+                            <li style="padding: var(--space-2) 0;">✓ 1 toy (matched to dog)</li>
+                            <li style="padding: var(--space-2) 0;">✓ Training treats bag</li>
+                            <li style="padding: var(--space-2) 0;">✓ Photo of delivery</li>
+                        </ul>
+                        <a href="dogs.html" class="btn btn-outline" style="width: 100%;">Send Package</a>
+                    </div>
+
+                    <div class="pricing-card card featured fade-in">
+                        <h3>Joy Box</h3>
+                        <div class="pricing-amount">$45</div>
+                        <div class="pricing-period">per dog</div>
+                        <ul style="list-style: none; margin: var(--space-6) 0; text-align: left;">
+                            <li style="padding: var(--space-2) 0;">✓ 2 toys (variety)</li>
+                            <li style="padding: var(--space-2) 0;">✓ Puzzle toy included</li>
+                            <li style="padding: var(--space-2) 0;">✓ Treat variety pack</li>
+                            <li style="padding: var(--space-2) 0;">✓ Comfort blanket</li>
+                            <li style="padding: var(--space-2) 0;">✓ Photo + video</li>
+                        </ul>
+                        <a href="dogs.html" class="btn btn-primary" style="width: 100%;">Send Package</a>
+                    </div>
+
+                    <div class="pricing-card card fade-in">
+                        <h3>Ultimate Box</h3>
+                        <div class="pricing-amount">$75</div>
+                        <div class="pricing-period">per dog</div>
+                        <ul style="list-style: none; margin: var(--space-6) 0; text-align: left;">
+                            <li style="padding: var(--space-2) 0;">✓ 4 premium toys</li>
+                            <li style="padding: var(--space-2) 0;">✓ Multiple treat types</li>
+                            <li style="padding: var(--space-2) 0;">✓ Cozy bed/blanket</li>
+                            <li style="padding: var(--space-2) 0;">✓ Enrichment items</li>
+                            <li style="padding: var(--space-2) 0;">✓ Full unboxing video</li>
+                        </ul>
+                        <a href="dogs.html" class="btn btn-outline" style="width: 100%;">Send Package</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="newsletter fade-in">
+                    <h2>Brighten a Dog's Day</h2>
+                    <p>Choose a shelter dog and send them a box of happiness.</p>
+                    <a href="dogs.html" class="btn btn-glass btn-lg">Choose a Dog</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 PawsForward. All rights reserved. Made with 💛 for shelter dogs.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

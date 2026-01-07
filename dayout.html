@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sponsor outdoor adventures for shelter dogs - scenic walks, park visits, swimming, and enriching experiences outside the kennel.">
+    <title>Doggy Day Out | PawsForward</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🐾</div>
+                <span>PawsForward</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="daycare.html">Spa Day</a></li>
+                <li><a href="dayout.html">Adventures</a></li>
+                <li><a href="packages.html">Care Packages</a></li>
+                <li><a href="dogs.html">Meet the Dogs</a></li>
+                <li><a href="impact.html">Our Impact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="hero-badge fade-in">
+                    <span>🌲</span>
+                    <span>Adventure & Enrichment</span>
+                </div>
+                <h1 class="fade-in">Doggy Day Out</h1>
+                <p class="fade-in">Take a shelter dog on an adventure they'll never forget—fresh air, new smells, and
+                    the joy of exploring beyond kennel walls.</p>
+            </div>
+        </section>
+
+        <!-- Why It Matters -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: var(--space-16);">
+                    <div class="fade-in">
+                        <h2>Freedom Changes Everything</h2>
+                        <p style="font-size: var(--text-lg); margin-bottom: var(--space-8);">For dogs who spend their
+                            days waiting in kennels, a trip outside isn't just fun—it's transformative. Adventure days
+                            reduce stress, boost mental health, and show dogs at their best.</p>
+
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="icon">🧠</div>
+                                <div>
+                                    <h4>Mental Stimulation</h4>
+                                    <p>New environments provide enriching sensory experiences.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="icon">💪</div>
+                                <div>
+                                    <h4>Physical Exercise</h4>
+                                    <p>Walks and play burn energy and improve health.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="icon">📸</div>
+                                <div>
+                                    <h4>Better Photos</h4>
+                                    <p>Outdoor shots show their personality for adoption profiles.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in">
+                        <img src="images/adventure-dog.jpg" alt="Dog enjoying outdoor adventure"
+                            style="width: 100%; border-radius: var(--radius-2xl); box-shadow: var(--shadow-xl);"
+                            id="adventure-dog-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adventure Types -->
+        <section class="section" style="background: rgba(255,255,255,0.3);">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Choose Their Adventure</h2>
+                    <p>Activities are matched to each dog's personality and preferences. If a dog doesn't enjoy
+                        something, we won't push it.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🚶</div>
+                        <h3>Scenic Walks</h3>
+                        <p>Long, leisurely walks through beautiful parks and neighborhoods with plenty of sniff stops.
+                        </p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🏞️</div>
+                        <h3>Nature Trails</h3>
+                        <p>Dog-friendly hiking trails with trees, streams, and wildlife to discover.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🏃</div>
+                        <h3>Dog Park Play</h3>
+                        <p>Social time with other dogs at secure, supervised dog parks.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🏊</div>
+                        <h3>Swimming</h3>
+                        <p>For water-loving pups—safe swim sessions at dog-friendly beaches or pools.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🧺</div>
+                        <h3>Picnic Days</h3>
+                        <p>Relaxed outdoor time with treats, toys, and lots of cuddles in the park.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">👃</div>
+                        <h3>Sniff Walks</h3>
+                        <p>Enrichment-focused walks where the dog leads, exploring scents at their own pace.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>What You'll Receive</h2>
+                    <p>Every sponsorship comes with updates so you can share in the joy.</p>
+                </div>
+
+                <div class="grid grid-4">
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">📷</div>
+                        <h4>Photos</h4>
+                        <p style="font-size: var(--text-sm);">Beautiful outdoor photos of your sponsored dog's
+                            adventure.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🎬</div>
+                        <h4>Video Clips</h4>
+                        <p style="font-size: var(--text-sm);">Short videos capturing their happiest moments.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">📝</div>
+                        <h4>Day Summary</h4>
+                        <p style="font-size: var(--text-sm);">A written recap of what they did and enjoyed most.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">💌</div>
+                        <h4>Thank You</h4>
+                        <p style="font-size: var(--text-sm);">A heartfelt note from the shelter team.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section" style="background: rgba(255,255,255,0.3);">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Sponsor an Adventure</h2>
+                    <p>Choose the experience that speaks to you.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="pricing-card card fade-in">
+                        <h3>Quick Outing</h3>
+                        <div class="pricing-amount">$35</div>
+                        <div class="pricing-period">1-2 hours</div>
+                        <ul style="list-style: none; margin: var(--space-6) 0; text-align: left;">
+                            <li style="padding: var(--space-2) 0;">✓ Park walk or play</li>
+                            <li style="padding: var(--space-2) 0;">✓ Photo updates</li>
+                            <li style="padding: var(--space-2) 0;">✓ Day summary</li>
+                        </ul>
+                        <a href="dogs.html" class="btn btn-outline" style="width: 100%;">Choose Dog</a>
+                    </div>
+
+                    <div class="pricing-card card featured fade-in">
+                        <h3>Full Day Out</h3>
+                        <div class="pricing-amount">$65</div>
+                        <div class="pricing-period">4-5 hours</div>
+                        <ul style="list-style: none; margin: var(--space-6) 0; text-align: left;">
+                            <li style="padding: var(--space-2) 0;">✓ Extended adventure</li>
+                            <li style="padding: var(--space-2) 0;">✓ Multiple activities</li>
+                            <li style="padding: var(--space-2) 0;">✓ Photo & video package</li>
+                            <li style="padding: var(--space-2) 0;">✓ Treats included</li>
+                            <li style="padding: var(--space-2) 0;">✓ Detailed summary</li>
+                        </ul>
+                        <a href="dogs.html" class="btn btn-primary" style="width: 100%;">Choose Dog</a>
+                    </div>
+
+                    <div class="pricing-card card fade-in">
+                        <h3>Ultimate Adventure</h3>
+                        <div class="pricing-amount">$95</div>
+                        <div class="pricing-period">Full day + extras</div>
+                        <ul style="list-style: none; margin: var(--space-6) 0; text-align: left;">
+                            <li style="padding: var(--space-2) 0;">✓ Everything in Full</li>
+                            <li style="padding: var(--space-2) 0;">✓ Special destination</li>
+                            <li style="padding: var(--space-2) 0;">✓ Toys & treats to keep</li>
+                            <li style="padding: var(--space-2) 0;">✓ Professional photos</li>
+                            <li style="padding: var(--space-2) 0;">✓ Video highlights reel</li>
+                        </ul>
+                        <a href="dogs.html" class="btn btn-outline" style="width: 100%;">Choose Dog</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="newsletter fade-in">
+                    <h2>Give Them a Day to Remember</h2>
+                    <p>Choose a shelter dog and send them on an unforgettable adventure.</p>
+                    <a href="dogs.html" class="btn btn-glass btn-lg">Find Your Dog</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 PawsForward. All rights reserved. Made with 💛 for shelter dogs.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

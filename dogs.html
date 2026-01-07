@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Meet our shelter dogs waiting for sponsors. Choose a dog to sponsor for spa days, adventures, or care packages.">
+    <title>Meet the Dogs | PawsForward</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="canvas-container"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🐾</div>
+                <span>PawsForward</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="daycare.html">Spa Day</a></li>
+                <li><a href="dayout.html">Adventures</a></li>
+                <li><a href="packages.html">Care Packages</a></li>
+                <li><a href="dogs.html">Meet the Dogs</a></li>
+                <li><a href="impact.html">Our Impact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <div class="hero-badge fade-in">
+                    <span>🐕</span>
+                    <span>Waiting for You</span>
+                </div>
+                <h1 class="fade-in">Meet the Dogs</h1>
+                <p class="fade-in">Every dog here is waiting in a shelter, hoping for love. You can make their wait a
+                    little brighter by sponsoring an experience just for them.</p>
+            </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="filter-buttons fade-in">
+                    <button class="filter-btn active" data-filter="all">All Dogs</button>
+                    <button class="filter-btn" data-filter="small">Small</button>
+                    <button class="filter-btn" data-filter="medium">Medium</button>
+                    <button class="filter-btn" data-filter="large">Large</button>
+                    <button class="filter-btn" data-filter="puppy">Puppies</button>
+                    <button class="filter-btn" data-filter="senior">Seniors</button>
+                </div>
+
+                <div class="dogs-grid">
+                    <!-- Luna -->
+                    <div class="dog-card card fade-in" data-category="medium">
+                        <img src="images/dog-1.jpg" alt="Luna" class="dog-image">
+                        <div class="dog-info">
+                            <h3 class="dog-name">Luna</h3>
+                            <p class="dog-meta">2 years old • Mixed Breed • Shelter Haven</p>
+                            <div class="dog-traits">
+                                <span class="trait-tag">Playful</span>
+                                <span class="trait-tag">Loves walks</span>
+                                <span class="trait-tag">Cuddle bug</span>
+                            </div>
+                            <p style="font-size: var(--text-sm); margin-bottom: var(--space-4);">Luna came to us after
+                                being found wandering. She's blossomed into an affectionate girl who loves belly rubs
+                                and long walks.</p>
+                            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                                <a href="dog-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                                <a href="#" class="btn btn-outline btn-sm">Quick Sponsor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Max -->
+                    <div class="dog-card card fade-in" data-category="large">
+                        <img src="images/dog-2.jpg" alt="Max" class="dog-image">
+                        <div class="dog-info">
+                            <h3 class="dog-name">Max</h3>
+                            <p class="dog-meta">4 years old • Labrador Mix • Happy Tails Rescue</p>
+                            <div class="dog-traits">
+                                <span class="trait-tag">Gentle giant</span>
+                                <span class="trait-tag">Loves water</span>
+                                <span class="trait-tag">Senior friendly</span>
+                            </div>
+                            <p style="font-size: var(--text-sm); margin-bottom: var(--space-4);">Max is the calmest boy
+                                you'll ever meet. He adores swimming and would make the perfect couch companion.</p>
+                            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                                <a href="dog-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                                <a href="#" class="btn btn-outline btn-sm">Quick Sponsor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bella -->
+                    <div class="dog-card card fade-in" data-category="puppy">
+                        <img src="images/dog-3.jpg" alt="Bella" class="dog-image">
+                        <div class="dog-info">
+                            <h3 class="dog-name">Bella</h3>
+                            <p class="dog-meta">1 year old • Beagle Mix • Paws of Hope</p>
+                            <div class="dog-traits">
+                                <span class="trait-tag">Curious</span>
+                                <span class="trait-tag">Treat lover</span>
+                                <span class="trait-tag">Adventure ready</span>
+                            </div>
+                            <p style="font-size: var(--text-sm); margin-bottom: var(--space-4);">Bella is pure energy
+                                and curiosity! She loves sniffing everything and will do anything for a treat.</p>
+                            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                                <a href="dog-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                                <a href="#" class="btn btn-outline btn-sm">Quick Sponsor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charlie -->
+                    <div class="dog-card card fade-in" data-category="senior">
+                        <img src="images/dog-1.jpg" alt="Charlie" class="dog-image">
+                        <div class="dog-info">
+                            <h3 class="dog-name">Charlie</h3>
+                            <p class="dog-meta">8 years old • Golden Mix • Second Chance Shelter</p>
+                            <div class="dog-traits">
+                                <span class="trait-tag">Wise soul</span>
+                                <span class="trait-tag">Gentle</span>
+                                <span class="trait-tag">Quiet</span>
+                            </div>
+                            <p style="font-size: var(--text-sm); margin-bottom: var(--space-4);">Charlie is a sweet
+                                senior who has so much love left to give. He enjoys slow walks and quiet afternoons.</p>
+                            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                                <a href="dog-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                                <a href="#" class="btn btn-outline btn-sm">Quick Sponsor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Daisy -->
+                    <div class="dog-card card fade-in" data-category="small">
+                        <img src="images/dog-3.jpg" alt="Daisy" class="dog-image">
+                        <div class="dog-info">
+                            <h3 class="dog-name">Daisy</h3>
+                            <p class="dog-meta">3 years old • Terrier Mix • Forever Friends</p>
+                            <div class="dog-traits">
+                                <span class="trait-tag">Spunky</span>
+                                <span class="trait-tag">Lap dog</span>
+                                <span class="trait-tag">Smart</span>
+                            </div>
+                            <p style="font-size: var(--text-sm); margin-bottom: var(--space-4);">Daisy may be small but
+                                she has a huge personality! She loves learning tricks and snuggling on laps.</p>
+                            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                                <a href="dog-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                                <a href="#" class="btn btn-outline btn-sm">Quick Sponsor</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rocky -->
+                    <div class="dog-card card fade-in" data-category="large">
+                        <img src="images/dog-2.jpg" alt="Rocky" class="dog-image">
+                        <div class="dog-info">
+                            <h3 class="dog-name">Rocky</h3>
+                            <p class="dog-meta">5 years old • Pit Mix • New Beginnings</p>
+                            <div class="dog-traits">
+                                <span class="trait-tag">Misunderstood</span>
+                                <span class="trait-tag">Loyal</span>
+                                <span class="trait-tag">Couch potato</span>
+                            </div>
+                            <p style="font-size: var(--text-sm); margin-bottom: var(--space-4);">Rocky looks tough but
+                                he's a total softie. He loves naps and will lean against you for pets all day.</p>
+                            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                                <a href="dog-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                                <a href="#" class="btn btn-outline btn-sm">Quick Sponsor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--space-12);">
+                    <button class="btn btn-secondary">Load More Dogs</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monthly Sponsor CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="newsletter fade-in">
+                    <h2>Can't Choose Just One?</h2>
+                    <p>Become a monthly donor and help dogs across all our partner shelters.</p>
+                    <a href="donate.html" class="btn btn-glass btn-lg">Become a Monthly Donor</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 PawsForward. All rights reserved. Made with 💛 for shelter dogs.</p>
+                <div class="social-links">
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize dog filter
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const dogCards = document.querySelectorAll('.dog-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.dataset.filter;
+
+                    dogCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.5s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sponsor a spa day for shelter dogs - grooming, relaxation, and stress relief to help them feel calm and cared for.">
+    <title>Doggy Spa Day | PawsForward</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🐾</div>
+                <span>PawsForward</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="daycare.html">Spa Day</a></li>
+                <li><a href="dayout.html">Adventures</a></li>
+                <li><a href="packages.html">Care Packages</a></li>
+                <li><a href="dogs.html">Meet the Dogs</a></li>
+                <li><a href="impact.html">Our Impact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="hero-badge fade-in">
+                    <span>🛁</span>
+                    <span>Relaxation & Wellness</span>
+                </div>
+                <h1 class="fade-in">Doggy Spa Day</h1>
+                <p class="fade-in">Give a shelter dog the gift of calm—gentle grooming, soothing baths, and
+                    stress-relieving care that prepares them for their forever home.</p>
+            </div>
+        </section>
+
+        <!-- Why Spa Days Matter -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: var(--space-16);">
+                    <div class="fade-in">
+                        <img src="images/spa-dog.jpg" alt="Dog enjoying spa treatment"
+                            style="width: 100%; border-radius: var(--radius-2xl); box-shadow: var(--shadow-xl);"
+                            id="spa-dog-img">
+                    </div>
+                    <div class="fade-in">
+                        <h2>Why Spa Days Matter</h2>
+                        <p style="font-size: var(--text-lg); margin-bottom: var(--space-8);">For shelter dogs, stress is
+                            constant. The unfamiliar sounds, smells, and routines can overwhelm even the calmest pups.
+                            Our spa days provide a sanctuary of peace.</p>
+
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="icon">💆</div>
+                                <div>
+                                    <h4>Reduces Anxiety</h4>
+                                    <p>Calming environments and gentle touch lower cortisol levels.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="icon">✨</div>
+                                <div>
+                                    <h4>Boosts Adoptability</h4>
+                                    <p>Clean, relaxed dogs make better first impressions.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="icon">❤️</div>
+                                <div>
+                                    <h4>Builds Trust</h4>
+                                    <p>Positive human contact helps dogs feel safe again.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spa Services -->
+        <section class="section" style="background: rgba(255,255,255,0.3);">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>What's Included</h2>
+                    <p>Every spa day is tailored to each dog's needs and comfort level.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🛁</div>
+                        <h3>Gentle Bath</h3>
+                        <p>Warm water, calming shampoos, and a soothing wash to clean away shelter stress.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🧴</div>
+                        <h3>Brushing & Grooming</h3>
+                        <p>Coat conditioning, detangling, and gentle brushing for a silky, mat-free finish.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🧖</div>
+                        <h3>Warm Towel Wrap</h3>
+                        <p>Cozy warm towels that provide comfort and help dry their coat gently.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🐾</div>
+                        <h3>Paw Care</h3>
+                        <p>Nail trimming, pad moisturizing, and gentle paw massage.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">💆</div>
+                        <h3>Light Massage</h3>
+                        <p>Gentle massage techniques that release tension and promote relaxation.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-8);">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">😴</div>
+                        <h3>Rest Time</h3>
+                        <p>Quiet time on soft bedding with calming music to complete the experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Choose a Spa Package</h2>
+                    <p>Every package brings peace and comfort to a shelter dog.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="pricing-card card fade-in">
+                        <h3>Basic Refresh</h3>
+                        <div class="pricing-amount">$25</div>
+                        <div class="pricing-period">per dog</div>
+                        <ul style="list-style: none; margin: var(--space-6) 0; text-align: left;">
+                            <li style="padding: var(--space-2) 0;">✓ Gentle bath</li>
+                            <li style="padding: var(--space-2) 0;">✓ Quick brush</li>
+                            <li style="padding: var(--space-2) 0;">✓ Warm towel dry</li>
+                        </ul>
+                        <a href="dogs.html" class="btn btn-outline" style="width: 100%;">Choose Dog</a>
+                    </div>
+
+                    <div class="pricing-card card featured fade-in">
+                        <h3>Full Spa Day</h3>
+                        <div class="pricing-amount">$50</div>
+                        <div class="pricing-period">per dog</div>
+                        <ul style="list-style: none; margin: var(--space-6) 0; text-align: left;">
+                            <li style="padding: var(--space-2) 0;">✓ Everything in Basic</li>
+                            <li style="padding: var(--space-2) 0;">✓ Deep brushing</li>
+                            <li style="padding: var(--space-2) 0;">✓ Paw care</li>
+                            <li style="padding: var(--space-2) 0;">✓ Light massage</li>
+                            <li style="padding: var(--space-2) 0;">✓ Rest time</li>
+                        </ul>
+                        <a href="dogs.html" class="btn btn-primary" style="width: 100%;">Choose Dog</a>
+                    </div>
+
+                    <div class="pricing-card card fade-in">
+                        <h3>VIP Pamper</h3>
+                        <div class="pricing-amount">$75</div>
+                        <div class="pricing-period">per dog</div>
+                        <ul style="list-style: none; margin: var(--space-6) 0; text-align: left;">
+                            <li style="padding: var(--space-2) 0;">✓ Everything in Full</li>
+                            <li style="padding: var(--space-2) 0;">✓ Extended massage</li>
+                            <li style="padding: var(--space-2) 0;">✓ Aromatherapy</li>
+                            <li style="padding: var(--space-2) 0;">✓ Photo package</li>
+                            <li style="padding: var(--space-2) 0;">✓ Comfort toy</li>
+                        </ul>
+                        <a href="dogs.html" class="btn btn-outline" style="width: 100%;">Choose Dog</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="newsletter fade-in">
+                    <h2>Ready to Give a Dog Peace?</h2>
+                    <p>Browse our shelter dogs and choose one to receive a relaxing spa day.</p>
+                    <a href="dogs.html" class="btn btn-glass btn-lg">Meet the Dogs</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 PawsForward. All rights reserved. Made with 💛 for shelter dogs.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
