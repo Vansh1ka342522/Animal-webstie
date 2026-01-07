@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Help shelter dogs through sponsored experiences and care. Give dogs joy, enrichment, and better chances of adoption.">
+  <title>PawsForward | Sponsor Shelter Dog Experiences</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Three.js Canvas Background -->
+  <div id="canvas-container"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🐾</div>
+        <span>PawsForward</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="daycare.html">Spa Day</a></li>
+        <li><a href="dayout.html">Adventures</a></li>
+        <li><a href="packages.html">Care Packages</a></li>
+        <li><a href="dogs.html">Meet the Dogs</a></li>
+        <li><a href="impact.html">Our Impact</a></li>
+        <li><a href="donate.html" class="nav-cta">Donate</a></li>
+      </ul>
+      
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content fade-in">
+          <div class="hero-badge">
+            <span>🌟</span>
+            <span>Making tails wag since 2024</span>
+          </div>
+          
+          <h1>Give Shelter Dogs <span class="highlight">Joy, Love & Adventure</span></h1>
+          
+          <p>You can't adopt them all, but you can make their days brighter. Sponsor enriching experiences for shelter dogs—from spa days to outdoor adventures—and help them find their forever homes.</p>
+          
+          <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary btn-lg">Start Sponsoring</a>
+            <a href="#how-it-works" class="btn btn-glass btn-lg">How It Works</a>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-count="2450">0</div>
+              <div class="stat-label">Dogs Helped</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="850">0</div>
+              <div class="stat-label">Adopted</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="15000">0</div>
+              <div class="stat-label">Experiences Given</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-image fade-in">
+          <img src="images/hero-dog.jpg" alt="Happy shelter dog enjoying outdoor adventure" id="hero-dog-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>How It Works</h2>
+          <p>Making a difference is simple. Here's how your kindness reaches shelter dogs.</p>
+        </div>
+        
+        <div class="steps-container">
+          <div class="step-card card fade-in">
+            <div class="step-number">1</div>
+            <h3>Choose an Experience</h3>
+            <p>Pick from spa days, outdoor adventures, or care packages—each designed to bring joy and comfort to shelter dogs.</p>
+          </div>
+          
+          <div class="step-card card fade-in">
+            <div class="step-number">2</div>
+            <h3>Select a Dog</h3>
+            <p>Browse our shelter dog profiles and choose who receives your sponsored experience based on their needs and personality.</p>
+          </div>
+          
+          <div class="step-card card fade-in">
+            <div class="step-number">3</div>
+            <h3>Make Their Day</h3>
+            <p>Your sponsorship is delivered, and you'll receive photos and updates showing the happiness you created.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Ways to Help</h2>
+          <p>Every sponsorship brings comfort, joy, and hope to a shelter dog waiting for their forever home.</p>
+        </div>
+        
+        <div class="grid grid-3">
+          <div class="service-card card fade-in">
+            <div class="icon">🛁</div>
+            <h3>Doggy Spa Day</h3>
+            <p>Treat a shelter dog to a relaxing spa experience—gentle baths, warm towel wraps, and calming massages that melt away stress.</p>
+            <a href="daycare.html" class="btn btn-primary">Gift a Spa Day</a>
+          </div>
+          
+          <div class="service-card card fade-in">
+            <div class="icon">🌲</div>
+            <h3>Doggy Day Out</h3>
+            <p>Sponsor adventures outside the shelter—scenic walks, park visits, swimming, and exploration that enriches their lives.</p>
+            <a href="dayout.html" class="btn btn-primary">Fund an Adventure</a>
+          </div>
+          
+          <div class="service-card card fade-in">
+            <div class="icon">🎁</div>
+            <h3>Care Packages</h3>
+            <p>Send toys, treats, and comfort items directly to shelter dogs—mental stimulation and happiness delivered.</p>
+            <a href="packages.html" class="btn btn-primary">Send a Package</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Dogs -->
+    <section id="featured-dogs" class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Meet Some Waiting Hearts</h2>
+          <p>These shelter dogs are waiting for someone like you to make their day special.</p>
+        </div>
+        
+        <div class="dogs-grid">
+          <div class="dog-card card fade-in">
+            <img src="images/dog-1.jpg" alt="Luna the dog" class="dog-image" id="dog-1-img">
+            <div class="dog-info">
+              <h3 class="dog-name">Luna</h3>
+              <p class="dog-meta">2 years old • Mixed Breed • Shelter Haven</p>
+              <div class="dog-traits">
+                <span class="trait-tag">Playful</span>
+                <span class="trait-tag">Loves walks</span>
+                <span class="trait-tag">Cuddle bug</span>
+              </div>
+              <a href="dog-profile.html" class="btn btn-outline btn-sm">Sponsor Luna</a>
+            </div>
+          </div>
+          
+          <div class="dog-card card fade-in">
+            <img src="images/dog-2.jpg" alt="Max the dog" class="dog-image" id="dog-2-img">
+            <div class="dog-info">
+              <h3 class="dog-name">Max</h3>
+              <p class="dog-meta">4 years old • Labrador Mix • Happy Tails Rescue</p>
+              <div class="dog-traits">
+                <span class="trait-tag">Gentle giant</span>
+                <span class="trait-tag">Loves water</span>
+                <span class="trait-tag">Senior friendly</span>
+              </div>
+              <a href="dog-profile.html" class="btn btn-outline btn-sm">Sponsor Max</a>
+            </div>
+          </div>
+          
+          <div class="dog-card card fade-in">
+            <img src="images/dog-3.jpg" alt="Bella the dog" class="dog-image" id="dog-3-img">
+            <div class="dog-info">
+              <h3 class="dog-name">Bella</h3>
+              <p class="dog-meta">1 year old • Beagle Mix • Paws of Hope</p>
+              <div class="dog-traits">
+                <span class="trait-tag">Curious</span>
+                <span class="trait-tag">Treat lover</span>
+                <span class="trait-tag">Adventure ready</span>
+              </div>
+              <a href="dog-profile.html" class="btn btn-outline btn-sm">Sponsor Bella</a>
+            </div>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: var(--space-12);">
+          <a href="dogs.html" class="btn btn-secondary">Meet All Dogs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section id="impact" class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Your Impact in Numbers</h2>
+          <p>Together, we're transforming shelter dogs' lives one experience at a time.</p>
+        </div>
+        
+        <div class="impact-grid">
+          <div class="impact-card card fade-in">
+            <div class="impact-icon">🛁</div>
+            <div class="impact-number" data-count="3200">0</div>
+            <div class="impact-label">Spa Days Given</div>
+          </div>
+          
+          <div class="impact-card card fade-in">
+            <div class="impact-icon">🌳</div>
+            <div class="impact-number" data-count="5800">0</div>
+            <div class="impact-label">Adventures Sponsored</div>
+          </div>
+          
+          <div class="impact-card card fade-in">
+            <div class="impact-icon">🎁</div>
+            <div class="impact-number" data-count="12400">0</div>
+            <div class="impact-label">Care Packages Sent</div>
+          </div>
+          
+          <div class="impact-card card fade-in">
+            <div class="impact-icon">🏠</div>
+            <div class="impact-number" data-count="850">0</div>
+            <div class="impact-label">Dogs Adopted</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Stories of Joy</h2>
+          <p>See how sponsors are making a difference in shelter dogs' lives.</p>
+        </div>
+        
+        <div class="grid grid-3">
+          <div class="testimonial-card card fade-in">
+            <p class="testimonial-text">"I couldn't adopt, but sponsoring a spa day for Duke made me feel like I truly helped. The photos of him relaxed and happy brought tears to my eyes."</p>
+            <div class="testimonial-author">
+              <img src="images/testimonial-1.jpg" alt="Sarah M." class="testimonial-avatar" id="testimonial-1-img">
+              <div>
+                <div class="testimonial-name">Sarah M.</div>
+                <div class="testimonial-role">Monthly Sponsor</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card card fade-in">
+            <p class="testimonial-text">"Knowing that my donation gives shelter dogs adventures outside their kennels is amazing. Every update I receive makes my heart full."</p>
+            <div class="testimonial-author">
+              <img src="images/testimonial-2.jpg" alt="James K." class="testimonial-avatar" id="testimonial-2-img">
+              <div>
+                <div class="testimonial-name">James K.</div>
+                <div class="testimonial-role">Adventure Sponsor</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card card fade-in">
+            <p class="testimonial-text">"The dog I sponsored got adopted a week after her spa day! They said she seemed calmer and more herself. This program truly works."</p>
+            <div class="testimonial-author">
+              <img src="images/testimonial-3.jpg" alt="Maya L." class="testimonial-avatar" id="testimonial-3-img">
+              <div>
+                <div class="testimonial-name">Maya L.</div>
+                <div class="testimonial-role">Spa Day Sponsor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section">
+      <div class="container">
+        <div class="newsletter fade-in">
+          <h2>Stay Connected</h2>
+          <p>Get heartwarming updates, success stories, and ways to help shelter dogs delivered to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">🐾</div>
+            <span>PawsForward</span>
+          </div>
+          <p>Bringing joy, comfort, and hope to shelter dogs through sponsored experiences and care.</p>
+        </div>
+        
+        <div>
+          <h4>Programs</h4>
+          <ul class="footer-links">
+            <li><a href="daycare.html">Doggy Spa Day</a></li>
+            <li><a href="dayout.html">Doggy Day Out</a></li>
+            <li><a href="packages.html">Care Packages</a></li>
+            <li><a href="donate.html">Monthly Giving</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4>About</h4>
+          <ul class="footer-links">
+            <li><a href="dogs.html">Meet the Dogs</a></li>
+            <li><a href="impact.html">Our Impact</a></li>
+            <li><a href="#">Partner Shelters</a></li>
+            <li><a href="#">Our Story</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 PawsForward. All rights reserved. Made with 💛 for shelter dogs.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
