@@ -20,7 +20,7 @@ function initThreeJS() {
 
   // Scene setup
   const scene = new THREE.Scene();
-  
+
   // Camera
   const camera = new THREE.PerspectiveCamera(
     75,
@@ -31,9 +31,9 @@ function initThreeJS() {
   camera.position.z = 50;
 
   // Renderer
-  const renderer = new THREE.WebGLRenderer({ 
-    alpha: true, 
-    antialias: true 
+  const renderer = new THREE.WebGLRenderer({
+    alpha: true,
+    antialias: true
   });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -82,7 +82,7 @@ function initThreeJS() {
     `,
     side: THREE.DoubleSide
   });
-  
+
   const gradientPlane = new THREE.Mesh(gradientGeometry, gradientMaterial);
   gradientPlane.position.z = -50;
   scene.add(gradientPlane);
@@ -185,7 +185,7 @@ function initThreeJS() {
   heartShape.bezierCurveTo(x + 0.7, y, x + 0.5, y + 0.5, x + 0.5, y + 0.5);
 
   const heartGeometry = new THREE.ShapeGeometry(heartShape);
-  
+
   for (let i = 0; i < 15; i++) {
     const heartMaterial = new THREE.MeshBasicMaterial({
       color: Math.random() > 0.5 ? 0xE8A854 : 0xE8857C,
@@ -193,20 +193,20 @@ function initThreeJS() {
       opacity: 0.15 + Math.random() * 0.15,
       side: THREE.DoubleSide
     });
-    
+
     const heart = new THREE.Mesh(heartGeometry, heartMaterial);
     heart.position.x = (Math.random() - 0.5) * 80;
     heart.position.y = (Math.random() - 0.5) * 80;
     heart.position.z = (Math.random() - 0.5) * 20 - 10;
     heart.rotation.z = Math.PI;
     heart.scale.setScalar(Math.random() * 1.5 + 0.5);
-    
+
     heart.userData = {
       speed: Math.random() * 0.3 + 0.1,
       rotSpeed: (Math.random() - 0.5) * 0.02,
       floatOffset: Math.random() * Math.PI * 2
     };
-    
+
     scene.add(heart);
     hearts.push(heart);
   }
@@ -214,7 +214,7 @@ function initThreeJS() {
   // Mouse interaction
   let mouseX = 0;
   let mouseY = 0;
-  
+
   document.addEventListener('mousemove', (e) => {
     mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
     mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
@@ -228,34 +228,34 @@ function initThreeJS() {
 
   // Animation loop
   const clock = new THREE.Clock();
-  
+
   function animate() {
     const elapsedTime = clock.getElapsedTime();
-    
+
     // Update gradient
     gradientMaterial.uniforms.uTime.value = elapsedTime;
-    
+
     // Update particles
     particlesMaterial.uniforms.uTime.value = elapsedTime;
-    
+
     // Animate hearts
     hearts.forEach((heart) => {
       heart.position.y += Math.sin(elapsedTime * heart.userData.speed + heart.userData.floatOffset) * 0.02;
       heart.position.x += Math.cos(elapsedTime * heart.userData.speed * 0.7 + heart.userData.floatOffset) * 0.01;
       heart.rotation.z += heart.userData.rotSpeed;
     });
-    
+
     // Mouse parallax
     camera.position.x += (mouseX * 3 - camera.position.x) * 0.02;
     camera.position.y += (-mouseY * 3 - camera.position.y) * 0.02;
-    
+
     // Scroll effect
     gradientPlane.position.y = scrollY * 0.01;
-    
+
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   }
-  
+
   animate();
 
   // Resize handler
@@ -305,7 +305,7 @@ function initNavigation() {
 // ============================================
 function initScrollAnimations() {
   const fadeElements = document.querySelectorAll('.fade-in');
-  
+
   const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -325,7 +325,7 @@ function initScrollAnimations() {
 
   // Animated counters
   const counters = document.querySelectorAll('[data-count]');
-  
+
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -339,7 +339,10 @@ function initScrollAnimations() {
 }
 
 function animateCounter(element) {
-  const target = parseInt(element.dataset.count);
+  const targetValue = element.dataset.count;
+  if (!targetValue || isNaN(parseInt(targetValue))) return;
+
+  const target = parseInt(targetValue);
   const duration = 2000;
   const start = performance.now();
   const startValue = 0;
@@ -347,13 +350,13 @@ function animateCounter(element) {
   function update(currentTime) {
     const elapsed = currentTime - start;
     const progress = Math.min(elapsed / duration, 1);
-    
+
     // Easing function
     const easeOutQuart = 1 - Math.pow(1 - progress, 4);
     const current = Math.floor(startValue + (target - startValue) * easeOutQuart);
-    
+
     element.textContent = current.toLocaleString();
-    
+
     if (progress < 1) {
       requestAnimationFrame(update);
     } else {
@@ -363,7 +366,7 @@ function animateCounter(element) {
       }
     }
   }
-  
+
   requestAnimationFrame(update);
 }
 
@@ -372,7 +375,7 @@ function animateCounter(element) {
 // ============================================
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
@@ -421,7 +424,7 @@ function initDogFilter() {
 // ============================================
 function initDonationCards() {
   const donationCards = document.querySelectorAll('.donation-card');
-  
+
   donationCards.forEach(card => {
     card.addEventListener('click', () => {
       donationCards.forEach(c => c.classList.remove('selected'));
@@ -439,14 +442,14 @@ class Carousel {
     this.slides = container.querySelectorAll('.carousel-slide');
     this.currentIndex = 0;
     this.autoplayInterval = null;
-    
+
     this.init();
   }
 
   init() {
     this.createDots();
     this.startAutoplay();
-    
+
     // Pause on hover
     this.container.addEventListener('mouseenter', () => this.stopAutoplay());
     this.container.addEventListener('mouseleave', () => this.startAutoplay());
@@ -455,14 +458,14 @@ class Carousel {
   createDots() {
     const dotsContainer = document.createElement('div');
     dotsContainer.className = 'carousel-dots';
-    
+
     this.slides.forEach((_, index) => {
       const dot = document.createElement('button');
       dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
       dot.addEventListener('click', () => this.goToSlide(index));
       dotsContainer.appendChild(dot);
     });
-    
+
     this.container.appendChild(dotsContainer);
     this.dots = dotsContainer.querySelectorAll('.carousel-dot');
   }
@@ -470,9 +473,9 @@ class Carousel {
   goToSlide(index) {
     this.slides[this.currentIndex].classList.remove('active');
     this.dots[this.currentIndex].classList.remove('active');
-    
+
     this.currentIndex = index;
-    
+
     this.slides[this.currentIndex].classList.add('active');
     this.dots[this.currentIndex].classList.add('active');
   }
