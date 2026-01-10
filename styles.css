@@ -13,17 +13,16 @@
   --gradient-end: #F9DCC4;
   --gradient-accent: #FEC89A;
 
-  /* Brand Colors (Balanced & Refreshing) */
-  /* Brand Colors (Balanced & Refreshing) */
-  --primary: #5D9CEC;
-  /* More prominent Sky Blue */
-  --primary-dark: #4A89DC;
+  /* Brand Colors (Refined Warm Original) */
+  --primary: #F6BB42;
+  /* Soft Gold */
+  --primary-dark: #E6B97D;
   --secondary: #8CC152;
-  /* More prominent Sage */
+  /* Fresh Sage */
   --secondary-dark: #70A23E;
   --accent: #ED5565;
-  /* More prominent Coral/Rose */
-  --accent-light: #DA4453;
+  /* Warm Coral */
+  --accent-light: #F4A7A0;
 
   /* Neutral Colors (Max Clarity) */
   --text-primary: #2D3436;
@@ -31,9 +30,9 @@
   --text-secondary: #5D6D7E;
   --text-light: #85929E;
   --white: #FFFFFF;
-  --cream: #FBFCFC;
-  /* Clean, refreshing off-white */
-  --card-bg: rgba(255, 255, 255, 0.9);
+  --cream: #FFF9F5;
+  /* Warmer, refreshing peach-white */
+  --card-bg: rgba(255, 255, 255, 0.92);
 
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.25);

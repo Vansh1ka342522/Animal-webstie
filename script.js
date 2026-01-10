@@ -44,10 +44,10 @@ function initThreeJS() {
   const gradientMaterial = new THREE.ShaderMaterial({
     uniforms: {
       uTime: { value: 0 },
-      uColor1: { value: new THREE.Color('#E1F0D7') }, /* Prominent Sage */
-      uColor2: { value: new THREE.Color('#D9EDF7') }, /* Prominent Blue */
-      uColor3: { value: new THREE.Color('#FBFCFC') }, /* Off White */
-      uColor4: { value: new THREE.Color('#EDF6F5') }  /* Prominent Teal */
+      uColor1: { value: new THREE.Color('#FFE5D9') }, /* Soft Peach */
+      uColor2: { value: new THREE.Color('#FFCAD4') }, /* Baby Pink */
+      uColor3: { value: new THREE.Color('#FFF9F5') }, /* Warm Off-White */
+      uColor4: { value: new THREE.Color('#FEC89A') }  /* Soft Gold */
     },
     vertexShader: `
       varying vec2 vUv;
