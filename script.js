@@ -44,10 +44,10 @@ function initThreeJS() {
   const gradientMaterial = new THREE.ShaderMaterial({
     uniforms: {
       uTime: { value: 0 },
-      uColor1: { value: new THREE.Color('#F7FAF5') }, /* Softest Sage */
-      uColor2: { value: new THREE.Color('#F4F8FB') }, /* Airy Blue */
+      uColor1: { value: new THREE.Color('#E1F0D7') }, /* Prominent Sage */
+      uColor2: { value: new THREE.Color('#D9EDF7') }, /* Prominent Blue */
       uColor3: { value: new THREE.Color('#FBFCFC') }, /* Off White */
-      uColor4: { value: new THREE.Color('#FBF2F2') }  /* Pale Rose */
+      uColor4: { value: new THREE.Color('#EDF6F5') }  /* Prominent Teal */
     },
     vertexShader: `
       varying vec2 vUv;
@@ -86,9 +86,9 @@ function initThreeJS() {
   // Apply page-specific theme colors to shader
   const body = document.body;
   const themeColors = {
-    'theme-spa': ['#EBF5E6', '#F7FAF5', '#F7FAF5', '#D9EAD3'],
-    'theme-dayout': ['#E8F1F8', '#F4F8FB', '#F4F8FB', '#D6E5F3'],
-    'theme-packages': ['#E8F8F5', '#F7F9F9', '#F7F9F9', '#D1F2EB']
+    'theme-spa': ['#E1F0D7', '#F5FBEF', '#F5FBEF', '#CCDFBD'],
+    'theme-dayout': ['#D9EDF7', '#F0F7FA', '#F0F7FA', '#BCE8F1'],
+    'theme-packages': ['#D5F2EC', '#F2F9F8', '#F2F9F8', '#A0E2D4']
   };
 
   for (const [cls, colors] of Object.entries(themeColors)) {

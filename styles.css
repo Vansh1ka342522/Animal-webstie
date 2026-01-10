@@ -14,15 +14,16 @@
   --gradient-accent: #FEC89A;
 
   /* Brand Colors (Balanced & Refreshing) */
-  --primary: #8EB8E5;
-  /* Soft Sky Blue */
-  --primary-dark: #7CA1CC;
-  --secondary: #A9D18E;
-  /* Light Sage */
-  --secondary-dark: #92B57B;
-  --accent: #F4A7A0;
-  /* Pale Coral */
-  --accent-light: #FBCDC8;
+  /* Brand Colors (Balanced & Refreshing) */
+  --primary: #5D9CEC;
+  /* More prominent Sky Blue */
+  --primary-dark: #4A89DC;
+  --secondary: #8CC152;
+  /* More prominent Sage */
+  --secondary-dark: #70A23E;
+  --accent: #ED5565;
+  /* More prominent Coral/Rose */
+  --accent-light: #DA4453;
 
   /* Neutral Colors (Max Clarity) */
   --text-primary: #2D3436;
@@ -97,61 +98,59 @@
 
 /* Spa Day Theme - Relaxing Sage & Pale Cream */
 body.theme-spa {
-  --primary: #A9D18E;
-  /* Sage Accent */
-  --primary-dark: #92B57B;
-  --secondary: #8EB8E5;
-  --secondary-dark: #7CA1CC;
-  --accent: #A9D18E;
-  --accent-light: #C5E0B4;
-  --cream: #F7FAF5;
-  /* Extremely subtle green tint */
+  --primary: #8CC152;
+  /* Prominent Sage */
+  --primary-dark: #70A23E;
+  --secondary: #5D9CEC;
+  --secondary-dark: #4A89DC;
+  --accent: #8CC152;
+  --accent-light: #A0D468;
+  --cream: #F5FBEF;
   --text-primary: #2D3436;
-  --gradient-start: #EBF5E6;
-  --gradient-mid: #F7FAF5;
-  --gradient-end: #D9EAD3;
-  --shadow-glow: 0 0 40px rgba(169, 209, 142, 0.2);
+  --gradient-start: #E1F0D7;
+  --gradient-mid: #F5FBEF;
+  --gradient-end: #CCDFBD;
+  --shadow-glow: 0 0 40px rgba(140, 193, 82, 0.25);
 }
 
 /* Day Out Theme - Airy Sky Blue & Clouds */
 body.theme-dayout {
-  --primary: #8EB8E5;
-  /* Blue Accent */
-  --primary-dark: #7CA1CC;
-  --secondary: #F9D18E;
-  /* Pale Gold */
-  --secondary-dark: #E6B97D;
-  --accent: #A9D18E;
-  /* Soft Green */
-  --accent-light: #C5E0B4;
-  --cream: #F4F8FB;
-  /* Extremely subtle blue tint */
+  --primary: #4FC1E9;
+  /* Prominent Sky Blue */
+  --primary-dark: #3BAFDA;
+  --secondary: #FFCE54;
+  /* Prominent Gold */
+  --secondary-dark: #F6BB42;
+  --accent: #A0D468;
+  /* Prominent Grass Green */
+  --accent-light: #8CC152;
+  --cream: #F0F7FA;
   --text-primary: #2D3436;
-  --gradient-start: #E8F1F8;
-  --gradient-mid: #F4F8FB;
-  --gradient-end: #D6E5F3;
-  --shadow-glow: 0 0 40px rgba(142, 184, 229, 0.2);
+  --gradient-start: #D9EDF7;
+  --gradient-mid: #F0F7FA;
+  --gradient-end: #BCE8F1;
+  --shadow-glow: 0 0 40px rgba(79, 193, 233, 0.25);
 }
 
 /* Care Packages Theme - Soft Teal & Lavender-Pink */
 body.theme-packages {
-  --primary: #76D7C4;
-  /* Soft Teal */
-  --primary-dark: #48C9B0;
-  --secondary: #F5B7B1;
-  /* Soft Rose */
-  --secondary-dark: #F1948A;
-  --accent: #F7DC6F;
-  /* Pale Yellow */
-  --accent-light: #F9E79F;
-  --cream: #F7F9F9;
-  /* Clean cool tint */
+  --primary: #48CFAD;
+  /* Prominent Teal */
+  --primary-dark: #37BC9B;
+  --secondary: #EC87C0;
+  /* Prominent Rose/Pink */
+  --secondary-dark: #D770AD;
+  --accent: #FFCE54;
+  /* Prominent Yellow */
+  --accent-light: #F6BB42;
+  --cream: #F2F9F8;
   --text-primary: #2D3436;
-  --gradient-start: #E8F8F5;
-  --gradient-mid: #F7F9F9;
-  --gradient-end: #D1F2EB;
-  --shadow-glow: 0 0 40px rgba(118, 215, 196, 0.2);
+  --gradient-start: #D5F2EC;
+  --gradient-mid: #F2F9F8;
+  --gradient-end: #A0E2D4;
+  --shadow-glow: 0 0 40px rgba(72, 207, 173, 0.25);
 }
+
 
 /* ============================================
    RESET & BASE STYLES
