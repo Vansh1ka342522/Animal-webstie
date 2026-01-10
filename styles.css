@@ -13,21 +13,26 @@
   --gradient-end: #F9DCC4;
   --gradient-accent: #FEC89A;
 
-  /* Brand Colors */
-  --primary: #E8A854;
-  --primary-dark: #D4943D;
-  --secondary: #7CB798;
-  --secondary-dark: #5FA47E;
-  --accent: #E8857C;
-  --accent-light: #F5ADA7;
+  /* Brand Colors (Balanced & Refreshing) */
+  --primary: #8EB8E5;
+  /* Soft Sky Blue */
+  --primary-dark: #7CA1CC;
+  --secondary: #A9D18E;
+  /* Light Sage */
+  --secondary-dark: #92B57B;
+  --accent: #F4A7A0;
+  /* Pale Coral */
+  --accent-light: #FBCDC8;
 
-  /* Neutral Colors */
-  --text-primary: #3D3D3D;
-  --text-secondary: #666666;
-  --text-light: #888888;
+  /* Neutral Colors (Max Clarity) */
+  --text-primary: #2D3436;
+  /* Deep Charcoal for readability */
+  --text-secondary: #5D6D7E;
+  --text-light: #85929E;
   --white: #FFFFFF;
-  --cream: #FDF8F3;
-  --card-bg: rgba(255, 255, 255, 0.85);
+  --cream: #FBFCFC;
+  /* Clean, refreshing off-white */
+  --card-bg: rgba(255, 255, 255, 0.9);
 
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.25);
@@ -90,63 +95,62 @@
    PAGE-SPECIFIC THEMES
    ============================================ */
 
-/* Spa Day Theme - Relaxing Sage & Olive */
+/* Spa Day Theme - Relaxing Sage & Pale Cream */
 body.theme-spa {
-  --primary: #B2AC88;
-  /* Sage Green */
-  --primary-dark: #9A9476;
-  --secondary: #E2725B;
-  /* Terracotta */
-  --secondary-dark: #C96550;
-  --accent: #B2AC88;
-  --accent-light: #C5BF9D;
-  --cream: #FFFDD0;
-  /* Cream background */
-  --text-primary: #333333;
-  --gradient-start: #B2AC88;
-  --gradient-mid: #FFFDD0;
-  --gradient-end: #E2725B;
-  --shadow-glow: 0 0 40px rgba(178, 172, 136, 0.3);
+  --primary: #A9D18E;
+  /* Sage Accent */
+  --primary-dark: #92B57B;
+  --secondary: #8EB8E5;
+  --secondary-dark: #7CA1CC;
+  --accent: #A9D18E;
+  --accent-light: #C5E0B4;
+  --cream: #F7FAF5;
+  /* Extremely subtle green tint */
+  --text-primary: #2D3436;
+  --gradient-start: #EBF5E6;
+  --gradient-mid: #F7FAF5;
+  --gradient-end: #D9EAD3;
+  --shadow-glow: 0 0 40px rgba(169, 209, 142, 0.2);
 }
 
-/* Day Out Theme - Energetic Sky Blue & Gold */
+/* Day Out Theme - Airy Sky Blue & Clouds */
 body.theme-dayout {
-  --primary: #87CEEB;
-  /* Sky Blue */
-  --primary-dark: #6CAAD1;
-  --secondary: #FFB347;
-  /* Golden Retriever Yellow/Orange */
-  --secondary-dark: #E6A13F;
-  --accent: #2D5A27;
-  /* Forest Green */
-  --accent-light: #3D7A35;
-  --cream: #F9F9F9;
-  /* Off White */
-  --text-primary: #2D5A27;
-  --gradient-start: #87CEEB;
-  --gradient-mid: #FFB347;
-  --gradient-end: #F9F9F9;
-  --shadow-glow: 0 0 40px rgba(135, 206, 235, 0.3);
+  --primary: #8EB8E5;
+  /* Blue Accent */
+  --primary-dark: #7CA1CC;
+  --secondary: #F9D18E;
+  /* Pale Gold */
+  --secondary-dark: #E6B97D;
+  --accent: #A9D18E;
+  /* Soft Green */
+  --accent-light: #C5E0B4;
+  --cream: #F4F8FB;
+  /* Extremely subtle blue tint */
+  --text-primary: #2D3436;
+  --gradient-start: #E8F1F8;
+  --gradient-mid: #F4F8FB;
+  --gradient-end: #D6E5F3;
+  --shadow-glow: 0 0 40px rgba(142, 184, 229, 0.2);
 }
 
-/* Care Packages Theme - Vibrant Teal & Coral */
+/* Care Packages Theme - Soft Teal & Lavender-Pink */
 body.theme-packages {
-  --primary: #008080;
-  /* Teal */
-  --primary-dark: #006666;
-  --secondary: #FF8C94;
-  /* Soft Coral */
-  --secondary-dark: #E67E85;
-  --accent: #FFD700;
-  /* Sunny Yellow */
-  --accent-light: #FFE033;
-  --cream: #E1E8ED;
-  /* Cool Grey */
-  --text-primary: #2C3E50;
-  --gradient-start: #008080;
-  --gradient-mid: #FF8C94;
-  --gradient-end: #E1E8ED;
-  --shadow-glow: 0 0 40px rgba(0, 128, 128, 0.3);
+  --primary: #76D7C4;
+  /* Soft Teal */
+  --primary-dark: #48C9B0;
+  --secondary: #F5B7B1;
+  /* Soft Rose */
+  --secondary-dark: #F1948A;
+  --accent: #F7DC6F;
+  /* Pale Yellow */
+  --accent-light: #F9E79F;
+  --cream: #F7F9F9;
+  /* Clean cool tint */
+  --text-primary: #2D3436;
+  --gradient-start: #E8F8F5;
+  --gradient-mid: #F7F9F9;
+  --gradient-end: #D1F2EB;
+  --shadow-glow: 0 0 40px rgba(118, 215, 196, 0.2);
 }
 
 /* ============================================
@@ -204,9 +208,11 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
+  /* Bolder headings for clarity */
   line-height: 1.2;
   color: var(--text-primary);
+  margin-bottom: var(--space-4);
 }
 
 h1 {
@@ -234,8 +240,9 @@ h6 {
 }
 
 p {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
   color: var(--text-secondary);
+  font-weight: 400;
 }
 
 a {
@@ -264,7 +271,8 @@ a:hover {
 
 .section-header {
   text-align: center;
-  margin-bottom: var(--space-16);
+  max-width: 800px;
+  margin: 0 auto var(--space-16);
 }
 
 .section-header h2 {

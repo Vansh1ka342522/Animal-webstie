@@ -44,10 +44,10 @@ function initThreeJS() {
   const gradientMaterial = new THREE.ShaderMaterial({
     uniforms: {
       uTime: { value: 0 },
-      uColor1: { value: new THREE.Color('#FFE5D9') },
-      uColor2: { value: new THREE.Color('#FFCAD4') },
-      uColor3: { value: new THREE.Color('#F9DCC4') },
-      uColor4: { value: new THREE.Color('#FEC89A') }
+      uColor1: { value: new THREE.Color('#F7FAF5') }, /* Softest Sage */
+      uColor2: { value: new THREE.Color('#F4F8FB') }, /* Airy Blue */
+      uColor3: { value: new THREE.Color('#FBFCFC') }, /* Off White */
+      uColor4: { value: new THREE.Color('#FBF2F2') }  /* Pale Rose */
     },
     vertexShader: `
       varying vec2 vUv;
@@ -67,10 +67,10 @@ function initThreeJS() {
       void main() {
         vec2 uv = vUv;
         
-        // Animate gradient position
-        float t = uTime * 0.1;
-        float x = uv.x + sin(t) * 0.1;
-        float y = uv.y + cos(t * 0.7) * 0.1;
+        // Animate gradient position (much slower for eye comfort)
+        float t = uTime * 0.03;
+        float x = uv.x + sin(t) * 0.05;
+        float y = uv.y + cos(t * 0.5) * 0.05;
         
         // Create smooth gradient blend
         vec3 color1 = mix(uColor1, uColor2, smoothstep(0.0, 0.5, x + sin(t * 0.5) * 0.2));
@@ -86,9 +86,9 @@ function initThreeJS() {
   // Apply page-specific theme colors to shader
   const body = document.body;
   const themeColors = {
-    'theme-spa': ['#B2AC88', '#FFFDD0', '#FFFDD0', '#E2725B'],
-    'theme-dayout': ['#87CEEB', '#FFB347', '#F9F9F9', '#87CEEB'],
-    'theme-packages': ['#008080', '#FF8C94', '#E1E8ED', '#008080']
+    'theme-spa': ['#EBF5E6', '#F7FAF5', '#F7FAF5', '#D9EAD3'],
+    'theme-dayout': ['#E8F1F8', '#F4F8FB', '#F4F8FB', '#D6E5F3'],
+    'theme-packages': ['#E8F8F5', '#F7F9F9', '#F7F9F9', '#D1F2EB']
   };
 
   for (const [cls, colors] of Object.entries(themeColors)) {
