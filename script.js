@@ -3,16 +3,9 @@
 // Dynamic gradient background with particles
 // ============================================
 
-// Global Three.js variables
-let scene, camera, renderer, bgMaterial, particlesMaterial, gradientPlane;
-let mouseX = 0, mouseY = 0, scrollY = 0;
-const clock = new THREE.Clock();
-const hearts = [];
-
 // Wait for DOM
 document.addEventListener('DOMContentLoaded', () => {
   initThreeJS();
-  initTheme();
   initNavigation();
   initScrollAnimations();
   initSmoothScroll();
@@ -26,10 +19,10 @@ function initThreeJS() {
   if (!container) return;
 
   // Scene setup
-  scene = new THREE.Scene();
+  const scene = new THREE.Scene();
 
   // Camera
-  camera = new THREE.PerspectiveCamera(
+  const camera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
     0.1,
@@ -38,7 +31,7 @@ function initThreeJS() {
   camera.position.z = 50;
 
   // Renderer
-  renderer = new THREE.WebGLRenderer({
+  const renderer = new THREE.WebGLRenderer({
     alpha: true,
     antialias: true
   });
@@ -48,7 +41,7 @@ function initThreeJS() {
 
   // Gradient Background Shader
   const gradientGeometry = new THREE.PlaneGeometry(200, 200);
-  bgMaterial = new THREE.ShaderMaterial({
+  const gradientMaterial = new THREE.ShaderMaterial({
     uniforms: {
       uTime: { value: 0 },
       uColor1: { value: new THREE.Color('#FFE5D9') },
@@ -73,19 +66,24 @@ function initThreeJS() {
       
       void main() {
         vec2 uv = vUv;
+        
+        // Animate gradient position
         float t = uTime * 0.1;
         float x = uv.x + sin(t) * 0.1;
         float y = uv.y + cos(t * 0.7) * 0.1;
+        
+        // Create smooth gradient blend
         vec3 color1 = mix(uColor1, uColor2, smoothstep(0.0, 0.5, x + sin(t * 0.5) * 0.2));
         vec3 color2 = mix(uColor3, uColor4, smoothstep(0.0, 0.5, y + cos(t * 0.3) * 0.2));
         vec3 finalColor = mix(color1, color2, smoothstep(0.3, 0.7, (x + y) * 0.5));
+        
         gl_FragColor = vec4(finalColor, 1.0);
       }
     `,
     side: THREE.DoubleSide
   });
 
-  gradientPlane = new THREE.Mesh(gradientGeometry, bgMaterial);
+  const gradientPlane = new THREE.Mesh(gradientGeometry, gradientMaterial);
   gradientPlane.position.z = -50;
   scene.add(gradientPlane);
 
@@ -111,7 +109,8 @@ function initThreeJS() {
   particlesGeometry.setAttribute('aSpeed', new THREE.BufferAttribute(speeds, 1));
   particlesGeometry.setAttribute('aOffset', new THREE.BufferAttribute(offsets, 1));
 
-  particlesMaterial = new THREE.ShaderMaterial({
+  // Custom particle shader for hearts/circles
+  const particlesMaterial = new THREE.ShaderMaterial({
     uniforms: {
       uTime: { value: 0 },
       uSize: { value: 80 },
@@ -122,17 +121,27 @@ function initThreeJS() {
       attribute float aScale;
       attribute float aSpeed;
       attribute float aOffset;
+      
       uniform float uTime;
       uniform float uSize;
+      
       varying float vAlpha;
       varying float vColorMix;
+      
       void main() {
         vec3 pos = position;
+        
+        // Floating animation
         pos.y += sin(uTime * aSpeed + aOffset) * 3.0;
         pos.x += cos(uTime * aSpeed * 0.7 + aOffset) * 2.0;
-        vec4 viewPosition = viewMatrix * modelMatrix * vec4(pos, 1.0);
-        gl_Position = projectionMatrix * viewPosition;
+        
+        vec4 modelPosition = modelMatrix * vec4(pos, 1.0);
+        vec4 viewPosition = viewMatrix * modelPosition;
+        vec4 projectedPosition = projectionMatrix * viewPosition;
+        
+        gl_Position = projectedPosition;
         gl_PointSize = uSize * aScale * (1.0 / -viewPosition.z);
+        
         vAlpha = 0.3 + sin(uTime * aSpeed + aOffset) * 0.2;
         vColorMix = aScale;
       }
@@ -140,13 +149,18 @@ function initThreeJS() {
     fragmentShader: `
       uniform vec3 uColor1;
       uniform vec3 uColor2;
+      
       varying float vAlpha;
       varying float vColorMix;
+      
       void main() {
+        // Create soft circle
         float dist = distance(gl_PointCoord, vec2(0.5));
         if (dist > 0.5) discard;
+        
         float alpha = smoothstep(0.5, 0.2, dist) * vAlpha;
         vec3 color = mix(uColor1, uColor2, vColorMix);
+        
         gl_FragColor = vec4(color, alpha);
       }
     `,
@@ -158,111 +172,99 @@ function initThreeJS() {
   const particles = new THREE.Points(particlesGeometry, particlesMaterial);
   scene.add(particles);
 
-  // Heart Geometry
+  // Floating Hearts (3D objects)
+  const hearts = [];
   const heartShape = new THREE.Shape();
-  heartShape.moveTo(0.5, 0.5);
-  heartShape.bezierCurveTo(0.5, 0.5, 0.4, 0, 0, 0);
-  heartShape.bezierCurveTo(-0.6, 0, -0.6, 0.7, -0.6, 0.7);
-  heartShape.bezierCurveTo(-0.6, 1.1, -0.3, 1.54, 0.5, 1.9);
-  heartShape.bezierCurveTo(1.2, 1.54, 1.6, 1.1, 1.6, 0.7);
-  heartShape.bezierCurveTo(1.6, 0.7, 1.6, 0, 1, 0);
-  heartShape.bezierCurveTo(0.7, 0, 0.5, 0.5, 0.5, 0.5);
+  const x = 0, y = 0;
+  heartShape.moveTo(x + 0.5, y + 0.5);
+  heartShape.bezierCurveTo(x + 0.5, y + 0.5, x + 0.4, y, x, y);
+  heartShape.bezierCurveTo(x - 0.6, y, x - 0.6, y + 0.7, x - 0.6, y + 0.7);
+  heartShape.bezierCurveTo(x - 0.6, y + 1.1, x - 0.3, y + 1.54, x + 0.5, y + 1.9);
+  heartShape.bezierCurveTo(x + 1.2, y + 1.54, x + 1.6, y + 1.1, x + 1.6, y + 0.7);
+  heartShape.bezierCurveTo(x + 1.6, y + 0.7, x + 1.6, y, x + 1, y);
+  heartShape.bezierCurveTo(x + 0.7, y, x + 0.5, y + 0.5, x + 0.5, y + 0.5);
+
   const heartGeometry = new THREE.ShapeGeometry(heartShape);
 
   for (let i = 0; i < 15; i++) {
-    const heartMat = new THREE.MeshBasicMaterial({
+    const heartMaterial = new THREE.MeshBasicMaterial({
       color: Math.random() > 0.5 ? 0xE8A854 : 0xE8857C,
       transparent: true,
       opacity: 0.15 + Math.random() * 0.15,
       side: THREE.DoubleSide
     });
-    const heart = new THREE.Mesh(heartGeometry, heartMat);
-    heart.position.set((Math.random() - 0.5) * 80, (Math.random() - 0.5) * 80, (Math.random() - 0.5) * 20 - 10);
+
+    const heart = new THREE.Mesh(heartGeometry, heartMaterial);
+    heart.position.x = (Math.random() - 0.5) * 80;
+    heart.position.y = (Math.random() - 0.5) * 80;
+    heart.position.z = (Math.random() - 0.5) * 20 - 10;
     heart.rotation.z = Math.PI;
     heart.scale.setScalar(Math.random() * 1.5 + 0.5);
-    heart.userData = { speed: Math.random() * 0.3 + 0.1, rotSpeed: (Math.random() - 0.5) * 0.02, floatOffset: Math.random() * Math.PI * 2 };
+
+    heart.userData = {
+      speed: Math.random() * 0.3 + 0.1,
+      rotSpeed: (Math.random() - 0.5) * 0.02,
+      floatOffset: Math.random() * Math.PI * 2
+    };
+
     scene.add(heart);
     hearts.push(heart);
   }
 
-  // Event Listeners
+  // Mouse interaction
+  let mouseX = 0;
+  let mouseY = 0;
+
   document.addEventListener('mousemove', (e) => {
     mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
     mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
   });
 
-  window.addEventListener('scroll', () => { scrollY = window.scrollY; });
-  window.addEventListener('resize', onWindowResize);
-
-  animate();
-}
-
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
-function animate() {
-  const elapsedTime = clock.getElapsedTime();
-  if (bgMaterial) bgMaterial.uniforms.uTime.value = elapsedTime;
-  if (particlesMaterial) particlesMaterial.uniforms.uTime.value = elapsedTime;
-
-  hearts.forEach((heart) => {
-    heart.position.y += Math.sin(elapsedTime * heart.userData.speed + heart.userData.floatOffset) * 0.02;
-    heart.position.x += Math.cos(elapsedTime * heart.userData.speed * 0.7 + heart.userData.floatOffset) * 0.01;
-    heart.rotation.z += heart.userData.rotSpeed;
+  // Scroll interaction
+  let scrollY = 0;
+  window.addEventListener('scroll', () => {
+    scrollY = window.scrollY;
   });
 
-  if (camera) {
+  // Animation loop
+  const clock = new THREE.Clock();
+
+  function animate() {
+    const elapsedTime = clock.getElapsedTime();
+
+    // Update gradient
+    gradientMaterial.uniforms.uTime.value = elapsedTime;
+
+    // Update particles
+    particlesMaterial.uniforms.uTime.value = elapsedTime;
+
+    // Animate hearts
+    hearts.forEach((heart) => {
+      heart.position.y += Math.sin(elapsedTime * heart.userData.speed + heart.userData.floatOffset) * 0.02;
+      heart.position.x += Math.cos(elapsedTime * heart.userData.speed * 0.7 + heart.userData.floatOffset) * 0.01;
+      heart.rotation.z += heart.userData.rotSpeed;
+    });
+
+    // Mouse parallax
     camera.position.x += (mouseX * 3 - camera.position.x) * 0.02;
     camera.position.y += (-mouseY * 3 - camera.position.y) * 0.02;
+
+    // Scroll effect
+    gradientPlane.position.y = scrollY * 0.01;
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
   }
-  if (gradientPlane) gradientPlane.position.y = scrollY * 0.01;
 
-  renderer.render(scene, camera);
-  requestAnimationFrame(animate);
-}
+  animate();
 
-// ============================================
-// THEME SWITCHER
-// ============================================
-function initTheme() {
-  const themeBtns = document.querySelectorAll('.theme-btn');
-  const savedTheme = localStorage.getItem('paws-theme') || 'default';
-  applyTheme(savedTheme);
-  themeBtns.forEach(btn => {
-    btn.addEventListener('click', () => applyTheme(btn.dataset.t));
+  // Resize handler
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
   });
 }
-
-function applyTheme(themeName) {
-  if (themeName === 'default') document.body.removeAttribute('data-theme');
-  else document.body.setAttribute('data-theme', themeName);
-
-  document.querySelectorAll('.theme-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.t === themeName);
-  });
-
-  localStorage.setItem('paws-theme', themeName);
-  updateThreeColors(themeName);
-}
-
-function updateThreeColors(theme) {
-  if (!bgMaterial) return;
-  const colors = {
-    'default': ['#FFE5D9', '#FFCAD4', '#F9DCC4', '#FEC89A'],
-    'happy-trails': ['#87CEEB', '#FFB347', '#F9F9F9', '#87CEEB'],
-    'modern-paws': ['#B2AC88', '#E2725B', '#FFFDD0', '#B2AC88'],
-    'playful-pup': ['#008080', '#FF8C94', '#E1E8ED', '#008080']
-  };
-  const palette = colors[theme] || colors['default'];
-  bgMaterial.uniforms.uColor1.value.set(palette[0]);
-  bgMaterial.uniforms.uColor2.value.set(palette[1]);
-  bgMaterial.uniforms.uColor3.value.set(palette[2]);
-  bgMaterial.uniforms.uColor4.value.set(palette[3]);
-}
-
 
 // ============================================
 // NAVIGATION
