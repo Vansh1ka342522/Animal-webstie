@@ -83,6 +83,24 @@ function initThreeJS() {
     side: THREE.DoubleSide
   });
 
+  // Apply page-specific theme colors to shader
+  const body = document.body;
+  const themeColors = {
+    'theme-spa': ['#B2AC88', '#FFFDD0', '#FFFDD0', '#E2725B'],
+    'theme-dayout': ['#87CEEB', '#FFB347', '#F9F9F9', '#87CEEB'],
+    'theme-packages': ['#008080', '#FF8C94', '#E1E8ED', '#008080']
+  };
+
+  for (const [cls, colors] of Object.entries(themeColors)) {
+    if (body.classList.contains(cls)) {
+      gradientMaterial.uniforms.uColor1.value.set(colors[0]);
+      gradientMaterial.uniforms.uColor2.value.set(colors[1]);
+      gradientMaterial.uniforms.uColor3.value.set(colors[2]);
+      gradientMaterial.uniforms.uColor4.value.set(colors[3]);
+      break;
+    }
+  }
+
   const gradientPlane = new THREE.Mesh(gradientGeometry, gradientMaterial);
   gradientPlane.position.z = -50;
   scene.add(gradientPlane);
