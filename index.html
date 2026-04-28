@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vanshika Venkatesh - Personal Portfolio showcasing hobbies, achievements, travels, and more.">
+    <title>Vanshika Venkatesh | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Three.js Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">Vanshika</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#travel">Travel</a></li>
+            <li><a href="#pets">Pets</a></li>
+            <li><a href="#services">Services</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="greeting">Hello, I'm</p>
+            <h1 class="name">Vanshika Venkatesh</h1>
+            <div class="typewriter">
+                <span class="typing-text"></span>
+            </div>
+            <p class="location">
+                <svg class="location-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Ho Chi Minh City
+            </p>
+            <a href="#hobbies" class="cta-btn">Explore More</a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="section hobbies-section">
+        <div class="container">
+            <h2 class="section-title">My Hobbies</h2>
+            <p class="section-subtitle">Things I love to do</p>
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎤</div>
+                    <h3>Singing</h3>
+                    <p>Expressing myself through music and melody</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">🏊‍♀️</div>
+                    <h3>Swimming</h3>
+                    <p>Staying active and enjoying the water</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">🤝</div>
+                    <h3>Volunteering</h3>
+                    <p>Making a difference in my community</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎮</div>
+                    <h3>Roblox</h3>
+                    <p>Gaming and creating virtual adventures</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section achievements-section">
+        <div class="container">
+            <h2 class="section-title">My Achievements</h2>
+            <p class="section-subtitle">Milestones I'm proud of</p>
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Previous">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="achievement-card">
+                            <div class="achievement-image placeholder-image">
+                                <span>📷</span>
+                                <p>Achievement Image</p>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>Achievement Title 1</h3>
+                                <p>Description of your amazing achievement goes here. Add details about what you accomplished.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-image placeholder-image">
+                                <span>📷</span>
+                                <p>Achievement Image</p>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>Achievement Title 2</h3>
+                                <p>Description of your amazing achievement goes here. Add details about what you accomplished.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-image placeholder-image">
+                                <span>📷</span>
+                                <p>Achievement Image</p>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>Achievement Title 3</h3>
+                                <p>Description of your amazing achievement goes here. Add details about what you accomplished.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-image placeholder-image">
+                                <span>📷</span>
+                                <p>Achievement Image</p>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>Achievement Title 4</h3>
+                                <p>Description of your amazing achievement goes here. Add details about what you accomplished.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn" aria-label="Next">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+    </section>
+
+    <!-- Travel Section -->
+    <section id="travel" class="section travel-section">
+        <div class="container">
+            <h2 class="section-title">My Travels</h2>
+            <p class="section-subtitle">Places I've explored</p>
+            <div class="travel-grid">
+                <div class="travel-card">
+                    <div class="travel-image placeholder-image">
+                        <span>🌍</span>
+                        <p>Travel Photo</p>
+                    </div>
+                    <div class="travel-overlay">
+                        <h3>Destination 1</h3>
+                        <p>Year Visited</p>
+                    </div>
+                </div>
+                <div class="travel-card">
+                    <div class="travel-image placeholder-image">
+                        <span>🌍</span>
+                        <p>Travel Photo</p>
+                    </div>
+                    <div class="travel-overlay">
+                        <h3>Destination 2</h3>
+                        <p>Year Visited</p>
+                    </div>
+                </div>
+                <div class="travel-card">
+                    <div class="travel-image placeholder-image">
+                        <span>🌍</span>
+                        <p>Travel Photo</p>
+                    </div>
+                    <div class="travel-overlay">
+                        <h3>Destination 3</h3>
+                        <p>Year Visited</p>
+                    </div>
+                </div>
+                <div class="travel-card">
+                    <div class="travel-image placeholder-image">
+                        <span>🌍</span>
+                        <p>Travel Photo</p>
+                    </div>
+                    <div class="travel-overlay">
+                        <h3>Destination 4</h3>
+                        <p>Year Visited</p>
+                    </div>
+                </div>
+                <div class="travel-card">
+                    <div class="travel-image placeholder-image">
+                        <span>🌍</span>
+                        <p>Travel Photo</p>
+                    </div>
+                    <div class="travel-overlay">
+                        <h3>Destination 5</h3>
+                        <p>Year Visited</p>
+                    </div>
+                </div>
+                <div class="travel-card">
+                    <div class="travel-image placeholder-image">
+                        <span>🌍</span>
+                        <p>Travel Photo</p>
+                    </div>
+                    <div class="travel-overlay">
+                        <h3>Destination 6</h3>
+                        <p>Year Visited</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pets Section -->
+    <section id="pets" class="section pets-section">
+        <div class="container">
+            <h2 class="section-title">My Furry Friend</h2>
+            <p class="section-subtitle">Meet my adorable companion</p>
+            <div class="pet-showcase">
+                <div class="pet-card">
+                    <div class="pet-image-container">
+                        <div class="pet-image placeholder-image">
+                            <span>🐕</span>
+                            <p>Richie's Photo</p>
+                        </div>
+                        <div class="paw-prints">
+                            <span>🐾</span>
+                            <span>🐾</span>
+                            <span>🐾</span>
+                        </div>
+                    </div>
+                    <div class="pet-info">
+                        <h3 class="pet-name">Richie</h3>
+                        <p class="pet-type">🐶 My Beloved Dog</p>
+                        <p class="pet-description">Richie is my adorable furry best friend who brings joy and happiness to every day!</p>
+                        <div class="pet-gallery">
+                            <div class="pet-thumbnail placeholder-image">
+                                <span>📷</span>
+                            </div>
+                            <div class="pet-thumbnail placeholder-image">
+                                <span>📷</span>
+                            </div>
+                            <div class="pet-thumbnail placeholder-image">
+                                <span>📷</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <h2 class="section-title">Services & Actions</h2>
+            <p class="section-subtitle">Ways I've helped and contributed</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💝</div>
+                    <div class="service-image placeholder-image">
+                        <span>📷</span>
+                        <p>Service Image</p>
+                    </div>
+                    <h3>Volunteering Activity 1</h3>
+                    <p>Description of the volunteering work or cause you supported. Explain the impact you made.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <div class="service-image placeholder-image">
+                        <span>📷</span>
+                        <p>Service Image</p>
+                    </div>
+                    <h3>Volunteering Activity 2</h3>
+                    <p>Description of the volunteering work or cause you supported. Explain the impact you made.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤲</div>
+                    <div class="service-image placeholder-image">
+                        <span>📷</span>
+                        <p>Service Image</p>
+                    </div>
+                    <h3>Volunteering Activity 3</h3>
+                    <p>Description of the volunteering work or cause you supported. Explain the impact you made.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌟</div>
+                    <div class="service-image placeholder-image">
+                        <span>📷</span>
+                        <p>Service Image</p>
+                    </div>
+                    <h3>Volunteering Activity 4</h3>
+                    <p>Description of the volunteering work or cause you supported. Explain the impact you made.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Made with 💖 by Vanshika Venkatesh</p>
+            <p class="footer-location">Ho Chi Minh City, Vietnam</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
