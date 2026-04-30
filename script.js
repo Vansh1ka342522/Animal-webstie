@@ -1,338 +1,518 @@
-// ===== Three.js Background =====
-const canvas = document.getElementById('bg-canvas');
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+// ============================================
+// SHELTER DOG SPONSORSHIP - THREE.JS + MAIN
+// Dynamic gradient background with particles
+// ============================================
 
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+// Wait for DOM
+document.addEventListener('DOMContentLoaded', () => {
+  initThreeJS();
+  initNavigation();
+  initScrollAnimations();
+  initSmoothScroll();
+});
 
-// Colors
-const colors = {
-    coral: 0xFF7F7F,
-    pink: 0xFFB6C1,
-    softPink: 0xFFD1DC,
-    lightPink: 0xFFE4E8
-};
+// ============================================
+// THREE.JS DYNAMIC BACKGROUND
+// ============================================
+function initThreeJS() {
+  const container = document.getElementById('canvas-container');
+  if (!container) return;
 
-// Create floating shapes
-const shapes = [];
-const geometries = [
-    new THREE.IcosahedronGeometry(1, 0),
-    new THREE.OctahedronGeometry(1, 0),
-    new THREE.TorusGeometry(0.7, 0.3, 16, 100),
-    new THREE.SphereGeometry(0.8, 32, 32),
-    new THREE.TetrahedronGeometry(1, 0)
-];
+  // Scene setup
+  const scene = new THREE.Scene();
 
-const colorArray = Object.values(colors);
+  // Camera
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
+  camera.position.z = 50;
 
-for (let i = 0; i < 25; i++) {
-    const geometry = geometries[Math.floor(Math.random() * geometries.length)];
-    const material = new THREE.MeshPhongMaterial({
-        color: colorArray[Math.floor(Math.random() * colorArray.length)],
-        transparent: true,
-        opacity: 0.6,
-        shininess: 100
-    });
-    
-    const mesh = new THREE.Mesh(geometry, material);
-    
-    mesh.position.x = (Math.random() - 0.5) * 30;
-    mesh.position.y = (Math.random() - 0.5) * 30;
-    mesh.position.z = (Math.random() - 0.5) * 20 - 10;
-    
-    mesh.rotation.x = Math.random() * Math.PI;
-    mesh.rotation.y = Math.random() * Math.PI;
-    
-    const scale = Math.random() * 0.5 + 0.3;
-    mesh.scale.set(scale, scale, scale);
-    
-    mesh.userData = {
-        rotationSpeedX: (Math.random() - 0.5) * 0.01,
-        rotationSpeedY: (Math.random() - 0.5) * 0.01,
-        floatSpeed: Math.random() * 0.005 + 0.002,
-        floatOffset: Math.random() * Math.PI * 2,
-        originalY: mesh.position.y
-    };
-    
-    shapes.push(mesh);
-    scene.add(mesh);
-}
+  // Renderer
+  const renderer = new THREE.WebGLRenderer({
+    alpha: true,
+    antialias: true
+  });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
 
-// Create particles
-const particlesGeometry = new THREE.BufferGeometry();
-const particlesCount = 200;
-const positions = new Float32Array(particlesCount * 3);
+  // Gradient Background Shader
+  const gradientGeometry = new THREE.PlaneGeometry(200, 200);
+  const gradientMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+      uTime: { value: 0 },
+      uColor1: { value: new THREE.Color('#FFE5D9') }, /* Soft Peach */
+      uColor2: { value: new THREE.Color('#FFCAD4') }, /* Baby Pink */
+      uColor3: { value: new THREE.Color('#FFF9F5') }, /* Warm Off-White */
+      uColor4: { value: new THREE.Color('#FEC89A') }  /* Soft Gold */
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      uniform float uTime;
+      uniform vec3 uColor1;
+      uniform vec3 uColor2;
+      uniform vec3 uColor3;
+      uniform vec3 uColor4;
+      varying vec2 vUv;
+      
+      void main() {
+        vec2 uv = vUv;
+        
+        // Animate gradient position (much slower for eye comfort)
+        float t = uTime * 0.03;
+        float x = uv.x + sin(t) * 0.05;
+        float y = uv.y + cos(t * 0.5) * 0.05;
+        
+        // Create smooth gradient blend
+        vec3 color1 = mix(uColor1, uColor2, smoothstep(0.0, 0.5, x + sin(t * 0.5) * 0.2));
+        vec3 color2 = mix(uColor3, uColor4, smoothstep(0.0, 0.5, y + cos(t * 0.3) * 0.2));
+        vec3 finalColor = mix(color1, color2, smoothstep(0.3, 0.7, (x + y) * 0.5));
+        
+        gl_FragColor = vec4(finalColor, 1.0);
+      }
+    `,
+    side: THREE.DoubleSide
+  });
 
-for (let i = 0; i < particlesCount * 3; i += 3) {
-    positions[i] = (Math.random() - 0.5) * 50;
-    positions[i + 1] = (Math.random() - 0.5) * 50;
-    positions[i + 2] = (Math.random() - 0.5) * 30 - 15;
-}
+  // Apply page-specific theme colors to shader
+  const body = document.body;
+  const themeColors = {
+    'theme-spa': ['#E1F0D7', '#F5FBEF', '#F5FBEF', '#CCDFBD'],
+    'theme-dayout': ['#D9EDF7', '#F0F7FA', '#F0F7FA', '#BCE8F1'],
+    'theme-packages': ['#D5F2EC', '#F2F9F8', '#F2F9F8', '#A0E2D4']
+  };
 
-particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  for (const [cls, colors] of Object.entries(themeColors)) {
+    if (body.classList.contains(cls)) {
+      gradientMaterial.uniforms.uColor1.value.set(colors[0]);
+      gradientMaterial.uniforms.uColor2.value.set(colors[1]);
+      gradientMaterial.uniforms.uColor3.value.set(colors[2]);
+      gradientMaterial.uniforms.uColor4.value.set(colors[3]);
+      break;
+    }
+  }
 
-const particlesMaterial = new THREE.PointsMaterial({
-    color: colors.coral,
-    size: 0.1,
+  const gradientPlane = new THREE.Mesh(gradientGeometry, gradientMaterial);
+  gradientPlane.position.z = -50;
+  scene.add(gradientPlane);
+
+  // Floating Particles
+  const particlesCount = 100;
+  const positions = new Float32Array(particlesCount * 3);
+  const scales = new Float32Array(particlesCount);
+  const speeds = new Float32Array(particlesCount);
+  const offsets = new Float32Array(particlesCount);
+
+  for (let i = 0; i < particlesCount; i++) {
+    positions[i * 3] = (Math.random() - 0.5) * 100;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 100;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 30;
+    scales[i] = Math.random() * 0.5 + 0.5;
+    speeds[i] = Math.random() * 0.5 + 0.2;
+    offsets[i] = Math.random() * Math.PI * 2;
+  }
+
+  const particlesGeometry = new THREE.BufferGeometry();
+  particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  particlesGeometry.setAttribute('aScale', new THREE.BufferAttribute(scales, 1));
+  particlesGeometry.setAttribute('aSpeed', new THREE.BufferAttribute(speeds, 1));
+  particlesGeometry.setAttribute('aOffset', new THREE.BufferAttribute(offsets, 1));
+
+  // Custom particle shader for hearts/circles
+  const particlesMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+      uTime: { value: 0 },
+      uSize: { value: 80 },
+      uColor1: { value: new THREE.Color('#E8A854') },
+      uColor2: { value: new THREE.Color('#E8857C') }
+    },
+    vertexShader: `
+      attribute float aScale;
+      attribute float aSpeed;
+      attribute float aOffset;
+      
+      uniform float uTime;
+      uniform float uSize;
+      
+      varying float vAlpha;
+      varying float vColorMix;
+      
+      void main() {
+        vec3 pos = position;
+        
+        // Floating animation
+        pos.y += sin(uTime * aSpeed + aOffset) * 3.0;
+        pos.x += cos(uTime * aSpeed * 0.7 + aOffset) * 2.0;
+        
+        vec4 modelPosition = modelMatrix * vec4(pos, 1.0);
+        vec4 viewPosition = viewMatrix * modelPosition;
+        vec4 projectedPosition = projectionMatrix * viewPosition;
+        
+        gl_Position = projectedPosition;
+        gl_PointSize = uSize * aScale * (1.0 / -viewPosition.z);
+        
+        vAlpha = 0.3 + sin(uTime * aSpeed + aOffset) * 0.2;
+        vColorMix = aScale;
+      }
+    `,
+    fragmentShader: `
+      uniform vec3 uColor1;
+      uniform vec3 uColor2;
+      
+      varying float vAlpha;
+      varying float vColorMix;
+      
+      void main() {
+        // Create soft circle
+        float dist = distance(gl_PointCoord, vec2(0.5));
+        if (dist > 0.5) discard;
+        
+        float alpha = smoothstep(0.5, 0.2, dist) * vAlpha;
+        vec3 color = mix(uColor1, uColor2, vColorMix);
+        
+        gl_FragColor = vec4(color, alpha);
+      }
+    `,
     transparent: true,
-    opacity: 0.6,
-    sizeAttenuation: true
-});
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+  });
 
-const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-scene.add(particles);
+  const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+  scene.add(particles);
 
-// Lighting
-const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.6);
-scene.add(ambientLight);
+  // Floating Hearts (3D objects)
+  const hearts = [];
+  const heartShape = new THREE.Shape();
+  const x = 0, y = 0;
+  heartShape.moveTo(x + 0.5, y + 0.5);
+  heartShape.bezierCurveTo(x + 0.5, y + 0.5, x + 0.4, y, x, y);
+  heartShape.bezierCurveTo(x - 0.6, y, x - 0.6, y + 0.7, x - 0.6, y + 0.7);
+  heartShape.bezierCurveTo(x - 0.6, y + 1.1, x - 0.3, y + 1.54, x + 0.5, y + 1.9);
+  heartShape.bezierCurveTo(x + 1.2, y + 1.54, x + 1.6, y + 1.1, x + 1.6, y + 0.7);
+  heartShape.bezierCurveTo(x + 1.6, y + 0.7, x + 1.6, y, x + 1, y);
+  heartShape.bezierCurveTo(x + 0.7, y, x + 0.5, y + 0.5, x + 0.5, y + 0.5);
 
-const pointLight = new THREE.PointLight(colors.coral, 1, 100);
-pointLight.position.set(10, 10, 10);
-scene.add(pointLight);
+  const heartGeometry = new THREE.ShapeGeometry(heartShape);
 
-const pointLight2 = new THREE.PointLight(colors.pink, 0.8, 100);
-pointLight2.position.set(-10, -10, 5);
-scene.add(pointLight2);
-
-camera.position.z = 15;
-
-// Mouse movement effect
-let mouseX = 0;
-let mouseY = 0;
-let targetX = 0;
-let targetY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-    mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-});
-
-// Animation
-let time = 0;
-function animate() {
-    requestAnimationFrame(animate);
-    time += 0.01;
-    
-    targetX += (mouseX - targetX) * 0.02;
-    targetY += (mouseY - targetY) * 0.02;
-    
-    shapes.forEach((shape, index) => {
-        shape.rotation.x += shape.userData.rotationSpeedX;
-        shape.rotation.y += shape.userData.rotationSpeedY;
-        shape.position.y = shape.userData.originalY + Math.sin(time + shape.userData.floatOffset) * 0.5;
+  for (let i = 0; i < 15; i++) {
+    const heartMaterial = new THREE.MeshBasicMaterial({
+      color: Math.random() > 0.5 ? 0xE8A854 : 0xE8857C,
+      transparent: true,
+      opacity: 0.15 + Math.random() * 0.15,
+      side: THREE.DoubleSide
     });
-    
-    particles.rotation.y += 0.0005;
-    particles.rotation.x += 0.0002;
-    
-    camera.position.x += (targetX * 2 - camera.position.x) * 0.05;
-    camera.position.y += (targetY * 2 - camera.position.y) * 0.05;
-    camera.lookAt(scene.position);
-    
+
+    const heart = new THREE.Mesh(heartGeometry, heartMaterial);
+    heart.position.x = (Math.random() - 0.5) * 80;
+    heart.position.y = (Math.random() - 0.5) * 80;
+    heart.position.z = (Math.random() - 0.5) * 20 - 10;
+    heart.rotation.z = Math.PI;
+    heart.scale.setScalar(Math.random() * 1.5 + 0.5);
+
+    heart.userData = {
+      speed: Math.random() * 0.3 + 0.1,
+      rotSpeed: (Math.random() - 0.5) * 0.02,
+      floatOffset: Math.random() * Math.PI * 2
+    };
+
+    scene.add(heart);
+    hearts.push(heart);
+  }
+
+  // Mouse interaction
+  let mouseX = 0;
+  let mouseY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  // Scroll interaction
+  let scrollY = 0;
+  window.addEventListener('scroll', () => {
+    scrollY = window.scrollY;
+  });
+
+  // Animation loop
+  const clock = new THREE.Clock();
+
+  function animate() {
+    const elapsedTime = clock.getElapsedTime();
+
+    // Update gradient
+    gradientMaterial.uniforms.uTime.value = elapsedTime;
+
+    // Update particles
+    particlesMaterial.uniforms.uTime.value = elapsedTime;
+
+    // Animate hearts
+    hearts.forEach((heart) => {
+      heart.position.y += Math.sin(elapsedTime * heart.userData.speed + heart.userData.floatOffset) * 0.02;
+      heart.position.x += Math.cos(elapsedTime * heart.userData.speed * 0.7 + heart.userData.floatOffset) * 0.01;
+      heart.rotation.z += heart.userData.rotSpeed;
+    });
+
+    // Mouse parallax
+    camera.position.x += (mouseX * 3 - camera.position.x) * 0.02;
+    camera.position.y += (-mouseY * 3 - camera.position.y) * 0.02;
+
+    // Scroll effect
+    gradientPlane.position.y = scrollY * 0.01;
+
     renderer.render(scene, camera);
-}
+    requestAnimationFrame(animate);
+  }
 
-animate();
+  animate();
 
-// Resize handler
-window.addEventListener('resize', () => {
+  // Resize handler
+  window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-});
+  });
+}
 
-// ===== Navigation =====
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+// ============================================
+// NAVIGATION
+// ============================================
+function initNavigation() {
+  const navbar = document.querySelector('.navbar');
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
 
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
+  // Mobile menu toggle
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileMenuBtn.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+      });
     });
-});
-
-// ===== Typewriter Effect =====
-const typewriterTexts = [
-    "Singer 🎤",
-    "Swimmer 🏊‍♀️",
-    "Volunteer 🤝",
-    "Gamer 🎮",
-    "Explorer 🌍",
-    "Dog Lover 🐕"
-];
-
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typingElement = document.querySelector('.typing-text');
-
-function typeWriter() {
-    const currentText = typewriterTexts[textIndex];
-    
-    if (isDeleting) {
-        typingElement.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingElement.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
-    }
-    
-    let typeSpeed = isDeleting ? 50 : 100;
-    
-    if (!isDeleting && charIndex === currentText.length) {
-        typeSpeed = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % typewriterTexts.length;
-        typeSpeed = 500;
-    }
-    
-    setTimeout(typeWriter, typeSpeed);
+  }
 }
 
-typeWriter();
+// ============================================
+// SCROLL ANIMATIONS
+// ============================================
+function initScrollAnimations() {
+  const fadeElements = document.querySelectorAll('.fade-in');
 
-// ===== Carousel =====
-const carouselTrack = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-const dotsContainer = document.querySelector('.carousel-dots');
-const cards = document.querySelectorAll('.achievement-card');
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
 
-let currentIndex = 0;
-const totalCards = cards.length;
-
-// Create dots
-cards.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.classList.add('carousel-dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToSlide(index));
-    dotsContainer.appendChild(dot);
-});
-
-const dots = document.querySelectorAll('.carousel-dot');
-
-function updateCarousel() {
-    carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-    });
-}
-
-function goToSlide(index) {
-    currentIndex = index;
-    updateCarousel();
-}
-
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalCards;
-    updateCarousel();
-}
-
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-    updateCarousel();
-}
-
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
-
-// Auto-play carousel
-let autoPlayInterval = setInterval(nextSlide, 5000);
-
-// Pause on hover
-const carouselContainer = document.querySelector('.carousel-container');
-carouselContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-carouselContainer.addEventListener('mouseleave', () => {
-    autoPlayInterval = setInterval(nextSlide, 5000);
-});
-
-// Touch support for carousel
-let touchStartX = 0;
-let touchEndX = 0;
-
-carouselContainer.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-carouselContainer.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
-
-function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-    
-    if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-            nextSlide();
-        } else {
-            prevSlide();
-        }
-    }
-}
-
-// ===== Scroll Animations =====
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
     });
-}, observerOptions);
+  }, observerOptions);
 
-// Add animation class to elements
-document.querySelectorAll('.hobby-card, .travel-card, .service-card, .pet-card').forEach(el => {
-    el.classList.add('animate-on-scroll');
-    observer.observe(el);
-});
+  fadeElements.forEach(el => observer.observe(el));
 
-// ===== Smooth scroll for anchor links =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offset = 80;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
+  // Animated counters
+  const counters = document.querySelectorAll('[data-count]');
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
     });
-});
+  }, observerOptions);
 
-// ===== Navbar scroll effect =====
-let lastScrollY = window.scrollY;
-const navbar = document.querySelector('.navbar');
+  counters.forEach(counter => counterObserver.observe(counter));
+}
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-        navbar.style.boxShadow = '0 4px 20px rgba(255, 127, 127, 0.15)';
+function animateCounter(element) {
+  const targetValue = element.dataset.count;
+  if (!targetValue || isNaN(parseInt(targetValue))) return;
+
+  const target = parseInt(targetValue);
+  const duration = 2000;
+  const start = performance.now();
+  const startValue = 0;
+
+  function update(currentTime) {
+    const elapsed = currentTime - start;
+    const progress = Math.min(elapsed / duration, 1);
+
+    // Easing function
+    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+    const current = Math.floor(startValue + (target - startValue) * easeOutQuart);
+
+    element.textContent = current.toLocaleString();
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.25)';
-        navbar.style.boxShadow = 'none';
+      element.textContent = target.toLocaleString();
+      if (element.dataset.suffix) {
+        element.textContent += element.dataset.suffix;
+      }
     }
-    lastScrollY = window.scrollY;
-});
+  }
 
-console.log('✨ Vanshika\'s Portfolio loaded successfully!');
+  requestAnimationFrame(update);
+}
+
+// ============================================
+// SMOOTH SCROLL
+// ============================================
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const headerOffset = 80;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
+
+// ============================================
+// DOG PROFILE FILTER
+// ============================================
+function initDogFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const dogCards = document.querySelectorAll('.dog-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      dogCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeInUp 0.5s ease forwards';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+// ============================================
+// DONATION CARD SELECTION
+// ============================================
+function initDonationCards() {
+  const donationCards = document.querySelectorAll('.donation-card');
+
+  donationCards.forEach(card => {
+    card.addEventListener('click', () => {
+      donationCards.forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    });
+  });
+}
+
+// ============================================
+// IMAGE CAROUSEL
+// ============================================
+class Carousel {
+  constructor(container) {
+    this.container = container;
+    this.slides = container.querySelectorAll('.carousel-slide');
+    this.currentIndex = 0;
+    this.autoplayInterval = null;
+
+    this.init();
+  }
+
+  init() {
+    this.createDots();
+    this.startAutoplay();
+
+    // Pause on hover
+    this.container.addEventListener('mouseenter', () => this.stopAutoplay());
+    this.container.addEventListener('mouseleave', () => this.startAutoplay());
+  }
+
+  createDots() {
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'carousel-dots';
+
+    this.slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+      dot.addEventListener('click', () => this.goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    this.container.appendChild(dotsContainer);
+    this.dots = dotsContainer.querySelectorAll('.carousel-dot');
+  }
+
+  goToSlide(index) {
+    this.slides[this.currentIndex].classList.remove('active');
+    this.dots[this.currentIndex].classList.remove('active');
+
+    this.currentIndex = index;
+
+    this.slides[this.currentIndex].classList.add('active');
+    this.dots[this.currentIndex].classList.add('active');
+  }
+
+  next() {
+    const nextIndex = (this.currentIndex + 1) % this.slides.length;
+    this.goToSlide(nextIndex);
+  }
+
+  startAutoplay() {
+    this.autoplayInterval = setInterval(() => this.next(), 5000);
+  }
+
+  stopAutoplay() {
+    clearInterval(this.autoplayInterval);
+  }
+}
+
+// Initialize carousels when needed
+document.querySelectorAll('.carousel').forEach(carousel => {
+  new Carousel(carousel);
+});

@@ -1,319 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vanshika Venkatesh - Personal Portfolio showcasing hobbies, achievements, travels, and more.">
-    <title>Vanshika Venkatesh | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Three.js Canvas -->
-    <canvas id="bg-canvas"></canvas>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-brand">Vanshika</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#travel">Travel</a></li>
-            <li><a href="#pets">Pets</a></li>
-            <li><a href="#services">Services</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Help shelter dogs through sponsored experiences and care. Give dogs joy, enrichment, and better chances of adoption.">
+  <title>UNKENNELED | Sponsor Shelter Dog Experiences</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Three.js Canvas Background -->
+  <div id="canvas-container"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🐾</div>
+        <span>UNKENNELED</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="daycare.html">Spa Day</a></li>
+        <li><a href="dayout.html">Adventures</a></li>
+        <li><a href="packages.html">Care Packages</a></li>
+        <li><a href="dogs.html">Meet the Dogs</a></li>
+        <li><a href="impact.html">Our Impact</a></li>
+        <li><a href="donate.html" class="nav-cta">Donate</a></li>
+      </ul>
+
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <p class="greeting">Hello, I'm</p>
-            <h1 class="name">Vanshika Venkatesh</h1>
-            <div class="typewriter">
-                <span class="typing-text"></span>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content fade-in">
+          <div class="hero-badge">
+            <span>🌟</span>
+            <span>Making tails wag since 2026</span>
+          </div>
+
+          <h1>Give Shelter Dogs <span class="highlight">Joy, Love & Adventure</span></h1>
+
+          <p>You can't adopt them all, but you can make their days brighter. Sponsor enriching experiences for shelter
+            dogs—from spa days to outdoor adventures—and help them find their forever homes.</p>
+
+          <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary btn-lg">Start Sponsoring</a>
+            <a href="#how-it-works" class="btn btn-glass btn-lg">How It Works</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">1,240+</div>
+              <div class="stat-label">Dogs Helped</div>
             </div>
-            <p class="location">
-                <svg class="location-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                Ho Chi Minh City
+            <div class="stat-item">
+              <div class="stat-number">850+</div>
+              <div class="stat-label">Adopted</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3,200+</div>
+              <div class="stat-label">Experiences Given</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image fade-in">
+          <img src="images/hero-dog.jpg" alt="Happy shelter dog enjoying outdoor adventure" id="hero-dog-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>How It Works</h2>
+          <p>Making a difference is simple. Here's how your kindness reaches shelter dogs.</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step-card card fade-in">
+            <div class="step-number">1</div>
+            <h3>Choose an Experience</h3>
+            <p>Pick from spa days, outdoor adventures, or care packages—each designed to bring joy and comfort to
+              shelter dogs.</p>
+          </div>
+
+          <div class="step-card card fade-in">
+            <div class="step-number">2</div>
+            <h3>Select a Dog</h3>
+            <p>Browse our shelter dog profiles and choose who receives your sponsored experience based on their needs
+              and personality.</p>
+          </div>
+
+          <div class="step-card card fade-in">
+            <div class="step-number">3</div>
+            <h3>Make Their Day</h3>
+            <p>Your sponsorship is delivered, and you'll receive photos and updates showing the happiness you created.
             </p>
-            <a href="#hobbies" class="cta-btn">Explore More</a>
+          </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <p>Scroll Down</p>
-        </div>
-    </section>
-
-    <!-- Hobbies Section -->
-    <section id="hobbies" class="section hobbies-section">
-        <div class="container">
-            <h2 class="section-title">My Hobbies</h2>
-            <p class="section-subtitle">Things I love to do</p>
-            <div class="hobbies-grid">
-                <div class="hobby-card">
-                    <div class="hobby-icon">🎤</div>
-                    <h3>Singing</h3>
-                    <p>Expressing myself through music and melody</p>
-                </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">🏊‍♀️</div>
-                    <h3>Swimming</h3>
-                    <p>Staying active and enjoying the water</p>
-                </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">🤝</div>
-                    <h3>Volunteering</h3>
-                    <p>Making a difference in my community</p>
-                </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">🎮</div>
-                    <h3>Roblox</h3>
-                    <p>Gaming and creating virtual adventures</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="section achievements-section">
-        <div class="container">
-            <h2 class="section-title">My Achievements</h2>
-            <p class="section-subtitle">Milestones I'm proud of</p>
-            <div class="carousel-container">
-                <button class="carousel-btn prev-btn" aria-label="Previous">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                    </svg>
-                </button>
-                <div class="carousel-track-container">
-                    <div class="carousel-track">
-                        <div class="achievement-card">
-                            <div class="achievement-image placeholder-image">
-                                <span>📷</span>
-                                <p>Achievement Image</p>
-                            </div>
-                            <div class="achievement-content">
-                                <h3>Achievement Title 1</h3>
-                                <p>Description of your amazing achievement goes here. Add details about what you accomplished.</p>
-                            </div>
-                        </div>
-                        <div class="achievement-card">
-                            <div class="achievement-image placeholder-image">
-                                <span>📷</span>
-                                <p>Achievement Image</p>
-                            </div>
-                            <div class="achievement-content">
-                                <h3>Achievement Title 2</h3>
-                                <p>Description of your amazing achievement goes here. Add details about what you accomplished.</p>
-                            </div>
-                        </div>
-                        <div class="achievement-card">
-                            <div class="achievement-image placeholder-image">
-                                <span>📷</span>
-                                <p>Achievement Image</p>
-                            </div>
-                            <div class="achievement-content">
-                                <h3>Achievement Title 3</h3>
-                                <p>Description of your amazing achievement goes here. Add details about what you accomplished.</p>
-                            </div>
-                        </div>
-                        <div class="achievement-card">
-                            <div class="achievement-image placeholder-image">
-                                <span>📷</span>
-                                <p>Achievement Image</p>
-                            </div>
-                            <div class="achievement-content">
-                                <h3>Achievement Title 4</h3>
-                                <p>Description of your amazing achievement goes here. Add details about what you accomplished.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-btn next-btn" aria-label="Next">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="carousel-dots"></div>
-        </div>
-    </section>
-
-    <!-- Travel Section -->
-    <section id="travel" class="section travel-section">
-        <div class="container">
-            <h2 class="section-title">My Travels</h2>
-            <p class="section-subtitle">Places I've explored</p>
-            <div class="travel-grid">
-                <div class="travel-card">
-                    <div class="travel-image placeholder-image">
-                        <span>🌍</span>
-                        <p>Travel Photo</p>
-                    </div>
-                    <div class="travel-overlay">
-                        <h3>Destination 1</h3>
-                        <p>Year Visited</p>
-                    </div>
-                </div>
-                <div class="travel-card">
-                    <div class="travel-image placeholder-image">
-                        <span>🌍</span>
-                        <p>Travel Photo</p>
-                    </div>
-                    <div class="travel-overlay">
-                        <h3>Destination 2</h3>
-                        <p>Year Visited</p>
-                    </div>
-                </div>
-                <div class="travel-card">
-                    <div class="travel-image placeholder-image">
-                        <span>🌍</span>
-                        <p>Travel Photo</p>
-                    </div>
-                    <div class="travel-overlay">
-                        <h3>Destination 3</h3>
-                        <p>Year Visited</p>
-                    </div>
-                </div>
-                <div class="travel-card">
-                    <div class="travel-image placeholder-image">
-                        <span>🌍</span>
-                        <p>Travel Photo</p>
-                    </div>
-                    <div class="travel-overlay">
-                        <h3>Destination 4</h3>
-                        <p>Year Visited</p>
-                    </div>
-                </div>
-                <div class="travel-card">
-                    <div class="travel-image placeholder-image">
-                        <span>🌍</span>
-                        <p>Travel Photo</p>
-                    </div>
-                    <div class="travel-overlay">
-                        <h3>Destination 5</h3>
-                        <p>Year Visited</p>
-                    </div>
-                </div>
-                <div class="travel-card">
-                    <div class="travel-image placeholder-image">
-                        <span>🌍</span>
-                        <p>Travel Photo</p>
-                    </div>
-                    <div class="travel-overlay">
-                        <h3>Destination 6</h3>
-                        <p>Year Visited</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pets Section -->
-    <section id="pets" class="section pets-section">
-        <div class="container">
-            <h2 class="section-title">My Furry Friend</h2>
-            <p class="section-subtitle">Meet my adorable companion</p>
-            <div class="pet-showcase">
-                <div class="pet-card">
-                    <div class="pet-image-container">
-                        <div class="pet-image placeholder-image">
-                            <span>🐕</span>
-                            <p>Richie's Photo</p>
-                        </div>
-                        <div class="paw-prints">
-                            <span>🐾</span>
-                            <span>🐾</span>
-                            <span>🐾</span>
-                        </div>
-                    </div>
-                    <div class="pet-info">
-                        <h3 class="pet-name">Richie</h3>
-                        <p class="pet-type">🐶 My Beloved Dog</p>
-                        <p class="pet-description">Richie is my adorable furry best friend who brings joy and happiness to every day!</p>
-                        <div class="pet-gallery">
-                            <div class="pet-thumbnail placeholder-image">
-                                <span>📷</span>
-                            </div>
-                            <div class="pet-thumbnail placeholder-image">
-                                <span>📷</span>
-                            </div>
-                            <div class="pet-thumbnail placeholder-image">
-                                <span>📷</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section services-section">
-        <div class="container">
-            <h2 class="section-title">Services & Actions</h2>
-            <p class="section-subtitle">Ways I've helped and contributed</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💝</div>
-                    <div class="service-image placeholder-image">
-                        <span>📷</span>
-                        <p>Service Image</p>
-                    </div>
-                    <h3>Volunteering Activity 1</h3>
-                    <p>Description of the volunteering work or cause you supported. Explain the impact you made.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <div class="service-image placeholder-image">
-                        <span>📷</span>
-                        <p>Service Image</p>
-                    </div>
-                    <h3>Volunteering Activity 2</h3>
-                    <p>Description of the volunteering work or cause you supported. Explain the impact you made.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🤲</div>
-                    <div class="service-image placeholder-image">
-                        <span>📷</span>
-                        <p>Service Image</p>
-                    </div>
-                    <h3>Volunteering Activity 3</h3>
-                    <p>Description of the volunteering work or cause you supported. Explain the impact you made.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌟</div>
-                    <div class="service-image placeholder-image">
-                        <span>📷</span>
-                        <p>Service Image</p>
-                    </div>
-                    <h3>Volunteering Activity 4</h3>
-                    <p>Description of the volunteering work or cause you supported. Explain the impact you made.</p>
-                </div>
-            </div>
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Ways to Help</h2>
+          <p>Every sponsorship brings comfort, joy, and hope to a shelter dog waiting for their forever home.</p>
         </div>
+
+        <div class="grid grid-3">
+          <div class="service-card card fade-in">
+            <div class="icon">🛁</div>
+            <h3>Doggy Spa Day</h3>
+            <p>Treat a shelter dog to a relaxing spa experience—gentle baths, warm towel wraps, and calming massages
+              that melt away stress.</p>
+            <a href="daycare.html" class="btn btn-primary">Gift a Spa Day</a>
+          </div>
+
+          <div class="service-card card fade-in">
+            <div class="icon">🌲</div>
+            <h3>Doggy Day Out</h3>
+            <p>Sponsor adventures outside the shelter—scenic walks, park visits, swimming, and exploration that enriches
+              their lives.</p>
+            <a href="dayout.html" class="btn btn-primary">Fund an Adventure</a>
+          </div>
+
+          <div class="service-card card fade-in">
+            <div class="icon">🎁</div>
+            <h3>Care Packages</h3>
+            <p>Send toys, treats, and comfort items directly to shelter dogs—mental stimulation and happiness delivered.
+            </p>
+            <a href="packages.html" class="btn btn-primary">Send a Package</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-text">Made with 💖 by Vanshika Venkatesh</p>
-            <p class="footer-location">Ho Chi Minh City, Vietnam</p>
+    <!-- Featured Dogs -->
+    <section id="featured-dogs" class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Meet Some Waiting Hearts</h2>
+          <p>These shelter dogs are waiting for someone like you to make their day special.</p>
         </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="script.js"></script>
+        <div class="dogs-grid">
+          <div class="dog-card card fade-in">
+            <img src="images/dog-1.jpg" alt="Luna the dog" class="dog-image" id="dog-1-img">
+            <div class="dog-info">
+              <h3 class="dog-name">Luna</h3>
+              <p class="dog-meta">2 years old • Mixed Breed • Shelter Haven</p>
+              <div class="dog-traits">
+                <span class="trait-tag">Playful</span>
+                <span class="trait-tag">Loves walks</span>
+                <span class="trait-tag">Cuddle bug</span>
+              </div>
+              <a href="dog-profile.html" class="btn btn-outline btn-sm">Sponsor Luna</a>
+            </div>
+          </div>
+
+          <div class="dog-card card fade-in">
+            <img src="images/dog-2.jpg" alt="Max the dog" class="dog-image" id="dog-2-img">
+            <div class="dog-info">
+              <h3 class="dog-name">Max</h3>
+              <p class="dog-meta">4 years old • Labrador Mix • Happy Tails Rescue</p>
+              <div class="dog-traits">
+                <span class="trait-tag">Gentle giant</span>
+                <span class="trait-tag">Loves water</span>
+                <span class="trait-tag">Senior friendly</span>
+              </div>
+              <a href="dog-profile.html" class="btn btn-outline btn-sm">Sponsor Max</a>
+            </div>
+          </div>
+
+          <div class="dog-card card fade-in">
+            <img src="images/dog-3.jpg" alt="Bella the dog" class="dog-image" id="dog-3-img">
+            <div class="dog-info">
+              <h3 class="dog-name">Bella</h3>
+              <p class="dog-meta">1 year old • Beagle Mix • Paws of Hope</p>
+              <div class="dog-traits">
+                <span class="trait-tag">Curious</span>
+                <span class="trait-tag">Treat lover</span>
+                <span class="trait-tag">Adventure ready</span>
+              </div>
+              <a href="dog-profile.html" class="btn btn-outline btn-sm">Sponsor Bella</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-12);">
+          <a href="dogs.html" class="btn btn-secondary">Meet All Dogs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section id="impact" class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Your Impact in Numbers</h2>
+          <p>Together, we're transforming shelter dogs' lives one experience at a time.</p>
+        </div>
+
+        <div class="impact-grid">
+          <div class="impact-card card fade-in">
+            <div class="impact-icon">🛁</div>
+            <div class="impact-number">1,120</div>
+            <div class="impact-label">Spa Days Given</div>
+          </div>
+
+          <div class="impact-card card fade-in">
+            <div class="impact-icon">🌳</div>
+            <div class="impact-number">980</div>
+            <div class="impact-label">Adventures Sponsored</div>
+          </div>
+
+          <div class="impact-card card fade-in">
+            <div class="impact-icon">🎁</div>
+            <div class="impact-number">1,100</div>
+            <div class="impact-label">Care Packages Sent</div>
+          </div>
+
+          <div class="impact-card card fade-in">
+            <div class="impact-icon">🏠</div>
+            <div class="impact-number">850</div>
+            <div class="impact-label">Dogs Adopted</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2>Stories of Joy</h2>
+          <p>See how sponsors are making a difference in shelter dogs' lives.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="testimonial-card card fade-in">
+            <p class="testimonial-text">"I couldn't adopt, but sponsoring a spa day for Duke made me feel like I truly
+              helped. The photos of him relaxed and happy brought tears to my eyes."</p>
+            <div class="testimonial-author">
+              <img src="images/testimonial-1.jpg" alt="Sarah M." class="testimonial-avatar" id="testimonial-1-img">
+              <div>
+                <div class="testimonial-name">Sarah M.</div>
+                <div class="testimonial-role">Monthly Sponsor</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card card fade-in">
+            <p class="testimonial-text">"Knowing that my donation gives shelter dogs adventures outside their kennels is
+              amazing. Every update I receive makes my heart full."</p>
+            <div class="testimonial-author">
+              <img src="images/testimonial-2.jpg" alt="James K." class="testimonial-avatar" id="testimonial-2-img">
+              <div>
+                <div class="testimonial-name">James K.</div>
+                <div class="testimonial-role">Adventure Sponsor</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card card fade-in">
+            <p class="testimonial-text">"The dog I sponsored got adopted a week after her spa day! They said she seemed
+              calmer and more herself. This program truly works."</p>
+            <div class="testimonial-author">
+              <img src="images/testimonial-3.jpg" alt="Maya L." class="testimonial-avatar" id="testimonial-3-img">
+              <div>
+                <div class="testimonial-name">Maya L.</div>
+                <div class="testimonial-role">Spa Day Sponsor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section">
+      <div class="container">
+        <div class="newsletter fade-in">
+          <h2>Stay Connected</h2>
+          <p>Get heartwarming updates, success stories, and ways to help shelter dogs delivered to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">🐾</div>
+            <span>UNKENNELED</span>
+          </div>
+          <p>Bringing joy, comfort, and hope to shelter dogs through sponsored experiences and care.</p>
+        </div>
+
+        <div>
+          <h4>Programs</h4>
+          <ul class="footer-links">
+            <li><a href="daycare.html">Doggy Spa Day</a></li>
+            <li><a href="dayout.html">Doggy Day Out</a></li>
+            <li><a href="packages.html">Care Packages</a></li>
+            <li><a href="donate.html">Monthly Giving</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>About</h4>
+          <ul class="footer-links">
+            <li><a href="dogs.html">Meet the Dogs</a></li>
+            <li><a href="impact.html">Our Impact</a></li>
+            <li><a href="#">Partner Shelters</a></li>
+            <li><a href="#">Our Story</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 UNKENNELED. All rights reserved. Made with 💛 for shelter dogs.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
 </body>
+
 </html>
