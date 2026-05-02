@@ -353,15 +353,21 @@ a:hover {
 }
 
 .nav-cta {
-  background: #F8C66D !important; /* Lighter Gold specifically for Donate */
-  color: var(--white) !important;
-  padding: var(--space-3) var(--space-6) !important;
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--primary) !important;
+  color: var(--text-primary) !important;
+  padding: var(--space-2) var(--space-6) !important;
+  font-weight: 600;
+  box-shadow: none !important;
 }
 
 .nav-cta:hover {
-  background: #ECD0A5 !important; /* Lighter hover shade */
+  background: var(--primary) !important;
+  color: var(--white) !important;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md) !important;
 }
 
 /* Mobile Menu */
