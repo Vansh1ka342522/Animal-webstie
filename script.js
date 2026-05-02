@@ -86,9 +86,9 @@ function initThreeJS() {
   // Apply page-specific theme colors to shader
   const body = document.body;
   const themeColors = {
-    'theme-spa': ['#E9F4E3', '#F8FCF5', '#F8FCF5', '#DDEBCF'],
-    'theme-dayout': ['#E7F3F9', '#F6FAFC', '#F6FAFC', '#D0EEF4'],
-    'theme-packages': ['#E3F7F3', '#F7FBFB', '#F7FBFB', '#BDECE2']
+    'theme-spa': ['#E1F0D7', '#F5FBEF', '#F5FBEF', '#CCDFBD'],
+    'theme-dayout': ['#D9EDF7', '#F0F7FA', '#F0F7FA', '#BCE8F1'],
+    'theme-packages': ['#D5F2EC', '#F2F9F8', '#F2F9F8', '#A0E2D4']
   };
 
   for (const [cls, colors] of Object.entries(themeColors)) {
@@ -132,8 +132,8 @@ function initThreeJS() {
     uniforms: {
       uTime: { value: 0 },
       uSize: { value: 80 },
-      uColor1: { value: new THREE.Color('#F8C66D') },
-      uColor2: { value: new THREE.Color('#F17782') }
+      uColor1: { value: new THREE.Color('#E8A854') },
+      uColor2: { value: new THREE.Color('#E8857C') }
     },
     vertexShader: `
       attribute float aScale;
@@ -206,7 +206,7 @@ function initThreeJS() {
 
   for (let i = 0; i < 15; i++) {
     const heartMaterial = new THREE.MeshBasicMaterial({
-      color: Math.random() > 0.5 ? 0xF8C66D : 0xF17782,
+      color: Math.random() > 0.5 ? 0xE8A854 : 0xE8857C,
       transparent: true,
       opacity: 0.15 + Math.random() * 0.15,
       side: THREE.DoubleSide
