@@ -87,7 +87,7 @@ function initThreeJS() {
   const body = document.body;
   const themeColors = {
     'theme-spa': ['#E1F0D7', '#F5FBEF', '#F5FBEF', '#CCDFBD'],
-    'theme-dayout': ['#D9EDF7', '#F0F7FA', '#F0F7FA', '#BCE8F1'],
+    'theme-dayout': ['#DBE9F4', '#F2F6F9', '#F2F6F9', '#BED4E7'],
     'theme-packages': ['#E0DDFE', '#F9F8FF', '#F9F8FF', '#D1C9FF']
   };
 
