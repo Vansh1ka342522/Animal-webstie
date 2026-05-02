@@ -131,23 +131,22 @@ body.theme-dayout {
   --shadow-glow: 0 0 40px rgba(79, 193, 233, 0.25);
 }
 
-/* Care Packages Theme - Soft Teal & Lavender-Pink */
+/* Care Packages Theme - Light Purple & Lavender */
 body.theme-packages {
-  --primary: #48CFAD;
-  /* Prominent Teal */
-  --primary-dark: #37BC9B;
+  --primary: #A29BFE;
+  /* Prominent Lavender */
+  --primary-dark: #8177F0;
   --secondary: #EC87C0;
-  /* Prominent Rose/Pink */
+  /* Keep some rose/pink as secondary */
   --secondary-dark: #D770AD;
   --accent: #FFCE54;
-  /* Prominent Yellow */
   --accent-light: #F6BB42;
-  --cream: #F2F9F8;
+  --cream: #F9F8FF;
   --text-primary: #2D3436;
-  --gradient-start: #D5F2EC;
-  --gradient-mid: #F2F9F8;
-  --gradient-end: #A0E2D4;
-  --shadow-glow: 0 0 40px rgba(72, 207, 173, 0.25);
+  --gradient-start: #E0DDFE;
+  --gradient-mid: #F9F8FF;
+  --gradient-end: #D1C9FF;
+  --shadow-glow: 0 0 40px rgba(162, 155, 254, 0.25);
 }
 
 
