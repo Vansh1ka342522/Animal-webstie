@@ -114,18 +114,19 @@ body.theme-spa {
 
 /* Day Out Theme - Stable Serene Blue & Airy Clouds */
 body.theme-dayout {
-  --primary: #3498DB;
-  /* More stable, grounded blue */
-  --primary-dark: #2980B9;
-  --secondary: #FFCE54;
+  --primary: #4AA3DF;
+  /* Slightly brighter, fuller blue */
+  --primary-dark: #358ECC;
+  --secondary: #FFD56B;
+  /* Brighter gold */
   --secondary-dark: #F6BB42;
   --accent: #A0D468;
   --accent-light: #8CC152;
-  --cream: #F2F6F9;
+  --cream: #F8FAFC;
   --text-primary: #2D3436;
-  --gradient-start: #DBE9F4;
-  --gradient-mid: #F2F6F9;
-  --gradient-end: #BED4E7;
+  --gradient-start: #E3F0F9;
+  --gradient-mid: #F8FAFC;
+  --gradient-end: #C9DFF2;
   --shadow-glow: 0 0 40px rgba(52, 152, 219, 0.25);
 }
 
