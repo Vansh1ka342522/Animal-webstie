@@ -14,15 +14,15 @@
   --gradient-accent: #FEC89A;
 
   /* Brand Colors (Refined Warm Original) */
-  --primary: #F6BB42;
-  /* Soft Gold */
-  --primary-dark: #E6B97D;
-  --secondary: #8CC152;
-  /* Fresh Sage */
-  --secondary-dark: #70A23E;
-  --accent: #ED5565;
-  /* Warm Coral */
-  --accent-light: #F4A7A0;
+  --primary: #F8C66D;
+  /* Softer Gold */
+  --primary-dark: #ECD0A5;
+  --secondary: #A1CD76;
+  /* Lighter Fresh Sage */
+  --secondary-dark: #8AB85D;
+  --accent: #F17782;
+  /* Softer Warm Coral */
+  --accent-light: #F7B9B4;
 
   /* Neutral Colors (Max Clarity) */
   --text-primary: #2D3436;
@@ -97,13 +97,13 @@
 
 /* Spa Day Theme - Relaxing Sage & Pale Cream */
 body.theme-spa {
-  --primary: #8CC152;
-  /* Prominent Sage */
-  --primary-dark: #70A23E;
-  --secondary: #5D9CEC;
-  --secondary-dark: #4A89DC;
-  --accent: #8CC152;
-  --accent-light: #A0D468;
+  --primary: #A1CD76;
+  /* Prominent Lighter Sage */
+  --primary-dark: #8AB85D;
+  --secondary: #7DB1F1;
+  --secondary-dark: #689AE2;
+  --accent: #A1CD76;
+  --accent-light: #B5E18A;
   --cream: #F5FBEF;
   --text-primary: #2D3436;
   --gradient-start: #E1F0D7;
@@ -114,15 +114,15 @@ body.theme-spa {
 
 /* Day Out Theme - Airy Sky Blue & Clouds */
 body.theme-dayout {
-  --primary: #4FC1E9;
-  /* Prominent Sky Blue */
-  --primary-dark: #3BAFDA;
-  --secondary: #FFCE54;
-  /* Prominent Gold */
-  --secondary-dark: #F6BB42;
-  --accent: #A0D468;
-  /* Prominent Grass Green */
-  --accent-light: #8CC152;
+  --primary: #72D1EF;
+  /* Prominent Lighter Sky Blue */
+  --primary-dark: #5EC1E4;
+  --secondary: #FFD87D;
+  /* Prominent Lighter Gold */
+  --secondary-dark: #F8C66D;
+  --accent: #B5E18A;
+  /* Prominent Lighter Grass Green */
+  --accent-light: #A1CD76;
   --cream: #F0F7FA;
   --text-primary: #2D3436;
   --gradient-start: #D9EDF7;
@@ -133,15 +133,15 @@ body.theme-dayout {
 
 /* Care Packages Theme - Soft Teal & Lavender-Pink */
 body.theme-packages {
-  --primary: #48CFAD;
-  /* Prominent Teal */
-  --primary-dark: #37BC9B;
-  --secondary: #EC87C0;
-  /* Prominent Rose/Pink */
-  --secondary-dark: #D770AD;
-  --accent: #FFCE54;
-  /* Prominent Yellow */
-  --accent-light: #F6BB42;
+  --primary: #66DAC0;
+  /* Prominent Lighter Teal */
+  --primary-dark: #5ACBB1;
+  --secondary: #F0A2CD;
+  /* Prominent Lighter Rose/Pink */
+  --secondary-dark: #E28CBD;
+  --accent: #FFD87D;
+  /* Prominent Lighter Yellow */
+  --accent-light: #F8C66D;
   --cream: #F2F9F8;
   --text-primary: #2D3436;
   --gradient-start: #D5F2EC;
@@ -405,12 +405,12 @@ a:hover {
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: var(--white);
-  box-shadow: 0 4px 15px rgba(232, 168, 84, 0.4);
+  box-shadow: 0 4px 15px rgba(248, 198, 109, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(232, 168, 84, 0.5);
+  box-shadow: 0 8px 25px rgba(248, 198, 109, 0.4);
   color: var(--white);
 }
 
