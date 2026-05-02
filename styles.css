@@ -148,6 +148,10 @@ body.theme-packages {
   --shadow-glow: 0 0 40px rgba(162, 155, 254, 0.25);
 }
 
+body.theme-packages .logo-icon {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
 
 /* ============================================
    RESET & BASE STYLES
