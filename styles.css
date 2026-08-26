@@ -112,42 +112,48 @@ body.theme-spa {
   --shadow-glow: 0 0 40px rgba(140, 193, 82, 0.25);
 }
 
-/* Day Out Theme - Airy Sky Blue & Clouds */
-body.theme-dayout {
-  --primary: #4FC1E9;
-  /* Prominent Sky Blue */
-  --primary-dark: #3BAFDA;
-  --secondary: #FFCE54;
-  /* Prominent Gold */
-  --secondary-dark: #F6BB42;
-  --accent: #A0D468;
-  /* Prominent Grass Green */
-  --accent-light: #8CC152;
-  --cream: #F0F7FA;
+/* Birthdays Theme - Celebratory Gold & Soft Pink */
+body.theme-birthdays {
+  --primary: #FFB347;
+  /* Warm celebratory gold */
+  --primary-dark: #FFA733;
+  --secondary: #FF7B9C;
+  /* Soft pink */
+  --secondary-dark: #FF5F83;
+  --accent: #FFD56B;
+  --accent-light: #FFE285;
+  --cream: #FFF5F7;
   --text-primary: #2D3436;
-  --gradient-start: #D9EDF7;
-  --gradient-mid: #F0F7FA;
-  --gradient-end: #BCE8F1;
-  --shadow-glow: 0 0 40px rgba(79, 193, 233, 0.25);
+  --gradient-start: #FFEAF2;
+  --gradient-mid: #FFF5F7;
+  --gradient-end: #FFE3E8;
+  --shadow-glow: 0 0 40px rgba(255, 179, 71, 0.25);
 }
 
-/* Care Packages Theme - Soft Teal & Lavender-Pink */
+/* Care Packages Theme - Light Purple & Lavender */
 body.theme-packages {
-  --primary: #48CFAD;
-  /* Prominent Teal */
-  --primary-dark: #37BC9B;
+  --primary: #A7A1FE;
+  /* Prominent Lavender */
+  --primary-dark: #857CF0;
   --secondary: #EC87C0;
-  /* Prominent Rose/Pink */
+  /* Keep some rose/pink as secondary */
   --secondary-dark: #D770AD;
   --accent: #FFCE54;
-  /* Prominent Yellow */
   --accent-light: #F6BB42;
-  --cream: #F2F9F8;
+  --cream: #F9F8FF;
   --text-primary: #2D3436;
-  --gradient-start: #D5F2EC;
-  --gradient-mid: #F2F9F8;
-  --gradient-end: #A0E2D4;
-  --shadow-glow: 0 0 40px rgba(72, 207, 173, 0.25);
+  --gradient-start: #E4E1FE;
+  --gradient-mid: #F9F8FF;
+  --gradient-end: #D7D1FF;
+  --shadow-glow: 0 0 40px rgba(162, 155, 254, 0.25);
+}
+
+body.theme-birthdays .logo-icon {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary) 35%, var(--primary) 100%);
+}
+
+body.theme-packages .logo-icon {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 
 
@@ -353,15 +359,21 @@ a:hover {
 }
 
 .nav-cta {
-  background: var(--primary) !important;
-  color: var(--white) !important;
-  padding: var(--space-3) var(--space-6) !important;
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--primary) !important;
+  color: var(--text-primary) !important;
+  padding: var(--space-2) var(--space-6) !important;
+  font-weight: 600;
+  box-shadow: none !important;
 }
 
 .nav-cta:hover {
-  background: var(--primary-dark) !important;
+  background: var(--primary) !important;
+  color: var(--white) !important;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md) !important;
 }
 
 /* Mobile Menu */
@@ -1287,4 +1299,60 @@ a:hover {
     grid-template-columns: 1fr;
     direction: ltr;
   }
+}
+
+/* ============================================
+   PRICING CARDS & COMBOS
+   ============================================ */
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+}
+
+.pricing-card.featured {
+  border: 2px solid var(--primary);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+  background: var(--white);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.07) translateY(-8px);
+}
+
+.pricing-amount {
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: var(--space-4) 0 var(--space-1);
+  line-height: 1;
+}
+
+.pricing-period {
+  font-size: var(--text-sm);
+  color: var(--text-light);
+  margin-bottom: var(--space-6);
+}
+
+.pricing-card ul {
+  flex: 1;
+  list-style: none;
+  margin-bottom: var(--space-8);
+}
+
+.pricing-card ul li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: var(--text-secondary);
+}
+
+.pricing-card ul li:last-child {
+  border-bottom: none;
+}
+
+.pricing-card .btn {
+  width: 100%;
+  margin-top: auto;
 }
