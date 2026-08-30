@@ -87,8 +87,8 @@ function initThreeJS() {
   const body = document.body;
   const themeColors = {
     'theme-spa': ['#E1F0D7', '#F5FBEF', '#F5FBEF', '#CCDFBD'],
-    'theme-dayout': ['#E3F0F9', '#F8FAFC', '#F8FAFC', '#C9DFF2'],
-    'theme-packages': ['#E0DDFE', '#F9F8FF', '#F9F8FF', '#D1C9FF']
+    'theme-birthdays': ['#FFEAF2', '#FFF5F7', '#FFF5F7', '#FFE3E8'],
+    'theme-packages': ['#E4E1FE', '#F9F8FF', '#F9F8FF', '#D7D1FF']
   };
 
   for (const [cls, colors] of Object.entries(themeColors)) {

@@ -112,29 +112,29 @@ body.theme-spa {
   --shadow-glow: 0 0 40px rgba(140, 193, 82, 0.25);
 }
 
-/* Day Out Theme - Stable Serene Blue & Airy Clouds */
-body.theme-dayout {
-  --primary: #4AA3DF;
-  /* Slightly brighter, fuller blue */
-  --primary-dark: #358ECC;
-  --secondary: #FFD56B;
-  /* Brighter gold */
-  --secondary-dark: #F6BB42;
-  --accent: #A0D468;
-  --accent-light: #8CC152;
-  --cream: #F8FAFC;
+/* Birthdays Theme - Celebratory Gold & Soft Pink */
+body.theme-birthdays {
+  --primary: #FFB347;
+  /* Warm celebratory gold */
+  --primary-dark: #FFA733;
+  --secondary: #FF7B9C;
+  /* Soft pink */
+  --secondary-dark: #FF5F83;
+  --accent: #FFD56B;
+  --accent-light: #FFE285;
+  --cream: #FFF5F7;
   --text-primary: #2D3436;
-  --gradient-start: #E3F0F9;
-  --gradient-mid: #F8FAFC;
-  --gradient-end: #C9DFF2;
-  --shadow-glow: 0 0 40px rgba(52, 152, 219, 0.25);
+  --gradient-start: #FFEAF2;
+  --gradient-mid: #FFF5F7;
+  --gradient-end: #FFE3E8;
+  --shadow-glow: 0 0 40px rgba(255, 179, 71, 0.25);
 }
 
 /* Care Packages Theme - Light Purple & Lavender */
 body.theme-packages {
-  --primary: #A29BFE;
+  --primary: #A7A1FE;
   /* Prominent Lavender */
-  --primary-dark: #8177F0;
+  --primary-dark: #857CF0;
   --secondary: #EC87C0;
   /* Keep some rose/pink as secondary */
   --secondary-dark: #D770AD;
@@ -142,10 +142,14 @@ body.theme-packages {
   --accent-light: #F6BB42;
   --cream: #F9F8FF;
   --text-primary: #2D3436;
-  --gradient-start: #E0DDFE;
+  --gradient-start: #E4E1FE;
   --gradient-mid: #F9F8FF;
-  --gradient-end: #D1C9FF;
+  --gradient-end: #D7D1FF;
   --shadow-glow: 0 0 40px rgba(162, 155, 254, 0.25);
+}
+
+body.theme-birthdays .logo-icon {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary) 35%, var(--primary) 100%);
 }
 
 body.theme-packages .logo-icon {

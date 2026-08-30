@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Celebrate a shelter dog's special day by gifting them a birthday cake and giving them a reason to wag their tail.">
+    <title>Birthdays | UNKENNELED</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="theme-birthdays">
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🐾</div>
+                <span>UNKENNELED</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="daycare.html">Spa Day</a></li>
+                <li><a href="birthdays.html">Birthdays</a></li>
+                <li><a href="packages.html">Care Packages</a></li>
+                <li><a href="dogs.html">Meet the Dogs</a></li>
+                <li><a href="impact.html">Our Impact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="hero-badge fade-in">
+                    <span>🎉</span>
+                    <span>Celebrate Their Special Day</span>
+                </div>
+                <h1 class="fade-in">Give Them a Birthday to Remember</h1>
+                <p class="fade-in">Many shelter dogs have never had a birthday celebration. Change that by choosing a dog with an upcoming birthday and sending them a delicious, dog-friendly cake!</p>
+            </div>
+        </section>
+
+        <!-- Upcoming Birthdays -->
+        <section class="section" style="background: rgba(255,255,255,0.4); border-radius: var(--radius-3xl); margin: var(--space-8) var(--space-4);">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Upcoming Birthdays</h2>
+                    <p>These good boys and girls have a special day coming up. Pick a pup to celebrate!</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <!-- Dog 1 -->
+                    <div class="card fade-in" style="overflow: hidden; padding: 0;">
+                        <img src="images/dog-1.jpg" alt="Shelter dog" style="width: 100%; height: 250px; object-fit: cover;">
+                        <div style="padding: var(--space-6);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <h3 style="margin: 0;">Bella</h3>
+                                <span style="background: #FFF0F5; color: #D81B60; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">Turning 3!</span>
+                            </div>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);"><strong>Date:</strong> May 22nd</p>
+                            <a href="#cakes" class="btn btn-outline btn-sm" style="width: 100%;">Gift a Cake</a>
+                        </div>
+                    </div>
+
+                    <!-- Dog 2 -->
+                    <div class="card fade-in" style="overflow: hidden; padding: 0;">
+                        <img src="images/dog-2.jpg" alt="Shelter dog" style="width: 100%; height: 250px; object-fit: cover;">
+                        <div style="padding: var(--space-6);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <h3 style="margin: 0;">Max</h3>
+                                <span style="background: #FFF0F5; color: #D81B60; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">Turning 5!</span>
+                            </div>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);"><strong>Date:</strong> May 28th</p>
+                            <a href="#cakes" class="btn btn-outline btn-sm" style="width: 100%;">Gift a Cake</a>
+                        </div>
+                    </div>
+
+                    <!-- Dog 3 -->
+                    <div class="card fade-in" style="overflow: hidden; padding: 0;">
+                        <img src="images/dog-3.jpg" alt="Shelter dog" style="width: 100%; height: 250px; object-fit: cover;">
+                        <div style="padding: var(--space-6);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <h3 style="margin: 0;">Luna</h3>
+                                <span style="background: #FFF0F5; color: #D81B60; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">Turning 2!</span>
+                            </div>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);"><strong>Date:</strong> June 3rd</p>
+                            <a href="#cakes" class="btn btn-outline btn-sm" style="width: 100%;">Gift a Cake</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cake Selection -->
+        <section id="cakes" class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Select a Birthday Cake</h2>
+                    <p>Choose from our selection of delicious, dog-safe cakes made fresh by our local pet bakery partners.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <!-- Cake 1 -->
+                    <div class="pricing-card card fade-in">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🥕</div>
+                        <h3>Carrot Crunch Cake</h3>
+                        <div class="pricing-amount">(BLANK)</div>
+                        <p style="margin: var(--space-4) 0; color: var(--text-secondary);">A healthy, sweet treat made with fresh carrots and a creamy dog-safe yogurt frosting.</p>
+                        <a href="dogs.html" class="btn btn-outline" style="width: 100%;">Select This Cake</a>
+                    </div>
+
+                    <!-- Cake 2 -->
+                    <div class="pricing-card card featured fade-in">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🥜</div>
+                        <h3>Peanut Butter Pupcake</h3>
+                        <div class="pricing-amount">(BLANK)</div>
+                        <p style="margin: var(--space-4) 0; color: var(--text-secondary);">Our most popular cake! Packed with dog-friendly peanut butter and topped with a bone treat.</p>
+                        <a href="dogs.html" class="btn btn-primary" style="width: 100%;">Select This Cake</a>
+                    </div>
+
+                    <!-- Cake 3 -->
+                    <div class="pricing-card card fade-in">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-4);">🥩</div>
+                        <h3>Meaty Feast Cake</h3>
+                        <div class="pricing-amount">(BLANK)</div>
+                        <p style="margin: var(--space-4) 0; color: var(--text-secondary);">The ultimate savory delight made from premium ground beef, sweet potatoes, and peas.</p>
+                        <a href="dogs.html" class="btn btn-outline" style="width: 100%;">Select This Cake</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Get -->
+        <section class="section" style="background: linear-gradient(to bottom, rgba(255,182,193, 0.15), rgba(255,255,255,0.2));">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>What You'll Receive</h2>
+                    <p>Share in their joy when they receive your special gift.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">📷</div>
+                        <h4>Photos & Videos</h4>
+                        <p style="font-size: var(--text-sm);">Beautiful media of the dog enjoying their birthday cake.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">💌</div>
+                        <h4>Thank You Note</h4>
+                        <p style="font-size: var(--text-sm);">A heartfelt note from the shelter team on behalf of the birthday pup.</p>
+                    </div>
+
+                    <div class="card fade-in" style="text-align: center; padding: var(--space-6);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🎁</div>
+                        <h4>A Lasting Memory</h4>
+                        <p style="font-size: var(--text-sm);">Knowing you made a shelter dog feel loved on their special day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 UNKENNELED. All rights reserved. Made with 💛 for shelter dogs.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
