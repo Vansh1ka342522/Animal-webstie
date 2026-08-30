@@ -797,6 +797,17 @@ a:hover {
   color: var(--white);
 }
 
+/* Care Packages: richer multi-stop purple ombre */
+body.theme-packages .newsletter,
+body.theme-packages .btn-primary {
+  background: linear-gradient(120deg, #8378EE 0%, #9D8FF4 28%, #B8A8FA 58%, #D7CCFF 100%);
+  box-shadow: 0 10px 30px rgba(112, 92, 210, 0.28);
+}
+
+body.theme-packages .btn-primary:hover {
+  box-shadow: 0 14px 34px rgba(112, 92, 210, 0.38);
+}
+
 .newsletter h2 {
   color: var(--white);
   margin-bottom: var(--space-4);
